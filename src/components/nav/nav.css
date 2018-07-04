@@ -1,0 +1,25 @@
+.topnav {
+    font-family: 'Lato', sans-serif;
+    background-color: #FD763C;
+    overflow: hidden;
+}
+
+.topnav div, .topnav .nav {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav .nav {
+    float: right;
+}
+
+.topnav .nav:hover {
+    transition: all 1s ease;
+    background-color: #ffffff;
+    color: #FD763C;
+}
+
