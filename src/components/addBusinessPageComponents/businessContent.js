@@ -8,11 +8,11 @@ class BusinessContent extends Component {
             <AnimateHeight duration={500} height={height} >
                 <div className='inputMainContainer full' >
                     <div className='inputContainer' >
-                        <div>Business name :</div>
+
                         <input type='text' placeholder='Business name' />
                     </div>
                     <div className='inputContainer' >
-                        <div>Business address :</div>
+
                         <input type='text' placeholder='Street' />
                     </div>
                     <div className='row centerInput' >
@@ -27,8 +27,8 @@ class BusinessContent extends Component {
                         </div>
                     </div>
                     <div className='inputContainer' >
-                        <div>Business phone # :</div>
-                        <input type='text' placeholder='(xxx) xxx - xxxx' />
+
+                        <input type='text' placeholder='Business Phone' />
                     </div>
                     <div className='btnContainer' >
                         <button className="btn" onClick={() => this.props.setState('first')}>Next</button>
