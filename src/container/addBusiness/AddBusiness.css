@@ -23,16 +23,21 @@
     width: 100%;
 }
 
-.businesslistHeading span {
+.businesslistHeading span.editTxt {
     color: #0046fe;
     text-decoration: underline;
     cursor: pointer;
     margin-left: 20px;
 }
 
-.businesslistHeading span:hover {
+.businesslistHeading span.editTxt:hover {
     transition: all 1s ease;
     opacity: 0.5;
+}
+
+.lastbusinessText{
+    color: #000000;
+    font-size: 18px;
 }
 
 

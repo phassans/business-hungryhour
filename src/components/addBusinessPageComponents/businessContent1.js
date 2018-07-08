@@ -34,44 +34,8 @@ class BusinessContent1 extends Component {
                         }
                     </div>
                 </div>
-                <div className='inputContainer clear' >
-                    <h5>Website URL :</h5>
-                    <input type='text' placeholder='www.myrestauranthere.com' />
-                </div>
-                <div className='cuisineContainer' >
-                    <div className='cuisineHeading' >Cuisine type(s):</div>
-                    <div className='row' >
-                        <div className='col-md-4 col-sm-12' >
-                            {
-                                cuisineType1.map((v, i) => {
-                                    return (
-                                        <CuisineCheckBox key={i} name={v} />
-                                    )
-                                })
-                            }
-                        </div>
-                        <div className='col-md-4 col-sm-12 center' >
-                            {
-                                cuisineType2.map((v, i) => {
-                                    return (
-                                        <CuisineCheckBox key={i} name={v} />
-                                    )
-                                })
-                            }
-                        </div>
-                        <div className='col-md-4 col-sm-12' >
-                            {
-                                cuisineType3.map((v, i) => {
-                                    return (
-                                        <CuisineCheckBox key={i} name={v} />
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-                    <div className='btnContainer' >
-                        <button className="btn" onClick={() => this.props.setState('second')}>Next</button>
-                    </div>
+                <div className='btnContainer clear' >
+                    <button className="btn" onClick={() => this.props.setState('second')}>Next</button>
                 </div>
             </AnimateHeight>
         );
