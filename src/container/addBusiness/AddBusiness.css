@@ -1,0 +1,38 @@
+.addBusinessSection {
+    width: 90%;
+    margin: 0px auto;
+}
+
+.businesslistHeading {
+    font-size: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+
+.businesslistHeading:hover {
+    transition: all 1s ease;
+    color: #FD763C;
+}
+
+.selected {
+    color: #FD763C;
+}
+
+.full {
+    width: 100%;
+}
+
+.businesslistHeading span {
+    color: #0046fe;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.businesslistHeading span:hover {
+    transition: all 1s ease;
+    opacity: 0.5;
+}
+
+

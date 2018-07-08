@@ -1,0 +1,58 @@
+.mainContainer {
+    font-family: 'Lato', sans-serif;
+}
+
+/* ///////////////    Header Content     ////////////////////// */
+
+.headerContent{
+     border-bottom: 1px solid #000000;
+}
+
+.heading{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 50px 0px;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-bottom: 90px ;
+}
+
+.buttonContainer .btn {
+    width: 350px;
+    background-color: #ffffff;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #000000;
+    border-radius: 0px;
+}
+
+
+/* ///////////  sections  /////////// */
+.section1, .section2 {
+    height: 250px;
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    font-size: 17px;
+    padding: 10px;
+}
+
+/* ////////     footer    ///////////// */
+
+.footer-heading{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    margin: 20px 0px;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .btnContainer .btn {
+        width: 90%;
+        margin: 0px auto;
+    }
+}

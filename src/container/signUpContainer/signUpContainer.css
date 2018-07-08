@@ -1,0 +1,161 @@
+.mainContainer {
+    font-family: 'Lato', sans-serif;
+}
+
+.top-header .heading {
+    margin: 46px 0px 10px 0px;
+    font-size: 35px;
+}
+
+.top-header .heading, .top-header .login {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.top-header .login {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.inputMainContainer {
+    width: 90%;
+    margin: 0px auto;
+}
+
+.inputContainer {
+    margin: 30px 0px 20px 0px;
+}
+
+.inputContainer div {
+    font-size: 15px;
+    margin: 10px 0px;
+    color: #000000;
+    width: 80%;
+}
+
+.inputContainer input {
+    width: 400px;
+    padding: 10px 5px;
+    font-size: 17px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.btnContainer {
+    text-align: center;
+    margin-bottom: 45px !important;
+}
+
+.btnContainer .btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 350px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #000000;
+    border-radius: 5;
+}
+
+.btnGroup {
+    display: block;
+    width: 840px;
+    margin: 0px auto;
+}
+
+.footer{
+    margin-bottom: 50px;
+}
+
+.btnGroup .btn1 {
+    margin-top: 20px;
+    width: 50%;
+    background-color: #ffffff;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #000000;
+}
+
+.btnContainer .btn:hover, .btnGroup .btn1:hover {
+    transition: all 1s ease;
+    background-color: #FD763C;
+    color: #ffffff;
+}
+
+.btnContainer div a {
+    text-decoration: #000000 underline;
+    color: #000000;
+    font-size: 18px;
+}
+
+.btnContainer div a:hover {
+    transition: all 1s ease;
+    text-decoration: #FD763C underline;
+    color: #FD763C;
+}
+
+.condition {
+    text-align: center;
+    font-size: 13;
+    margin: 10px 0px 20px 0px;
+}
+
+@media only screen and (max-width: 410px) {
+    .inputContainer {
+        padding: 0px 10px;
+    }
+    .inputContainer input {
+        width:  80% !important;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .top-header .login {
+        transition: all 1s ease;
+        font-size: 15px;
+    }
+
+    .top-header .heading {
+        transition: all 1s ease;
+        font-size: 23px;
+    }
+
+    .btnContainer .btn {
+        transition: all 1s ease;
+        width: 85%;
+        margin-right: 5px;
+    }
+
+    .inputMainContainer {
+        transition: all 1s ease;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .inputContainer input {
+        transition: all 1s ease;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .btnGroup {
+        transition: all 1s ease;
+        width: 95%;
+    }
+
+    .inputMainContainer {
+        transition: all 1s ease;
+        width: 100%;
+    }
+
+    .inputContainer {
+        transition: all 1s ease;
+        width: 380px;
+        margin: 30px auto 20px;
+    }
+}

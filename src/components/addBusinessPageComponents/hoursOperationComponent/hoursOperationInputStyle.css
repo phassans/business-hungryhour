@@ -1,0 +1,109 @@
+.ContainerStyle .startTime input, .ContainerStyle .endTime input{
+    border: 1px solid #000000;
+    padding: 5px 3px;
+    border-radius: 2px;
+    width: 100px;
+    margin-right: 15px;
+}
+
+.ContainerStyle div.dayName, .breakCheck{
+    padding: 6px 30px;
+}
+
+.breakCheck{
+    text-align: center;
+}
+
+
+.ContainerStyle div{
+    width: 33%;
+    display: inline-block;
+}
+
+.list-square{
+    width: 8px !important ;
+    height: 8px;
+    border: 1px solid #000000;
+    margin: 6px auto;
+}
+
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000000;
+    box-shadow: 1.5px 1.5px #000000;
+    margin-left: 45%;
+    height: 13px;
+    width: 13px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #FD763C;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 3px;
+    top: 2px;
+    width: 4px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.checkboxContainer{
+text-align: center
+}
+
+
+@media only screen and (max-width: 420px){
+    .ContainerStyle .startTime input, .ContainerStyle .endTime input{
+        width: 60px;
+    }
+}
