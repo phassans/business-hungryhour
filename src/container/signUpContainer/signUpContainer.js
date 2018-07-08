@@ -17,16 +17,13 @@ class SignUpContainer extends Component {
 
         <div className='inputMainContainer' >
           <div className='inputContainer' >
-            <div>Email :</div>
-            <input type='text' placeholder='Type Your Email' />
+            <input type='text' placeholder='Email' />
           </div>
           <div className='inputContainer' >
-            <div>Name :</div>
-            <input type='text' placeholder='Type Your Full Name' />
+            <input type='text' placeholder='Full Name' />
           </div>
           <div className='inputContainer' >
-            <div>Password :</div>
-            <input type='password' placeholder='Type Your Password' />
+            <input type='password' placeholder='Password' />
           </div>
         </div>
 
