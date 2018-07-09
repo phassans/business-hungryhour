@@ -3,7 +3,7 @@
 }
 
 .top-header .heading {
-    margin: 10px 0px 10px 0px;
+    margin: 25px 0px 10px 0px;
     font-size: 35px;
 }
 
@@ -20,11 +20,15 @@
 
 .inputMainContainer {
     width: 90%;
-    margin: 0px auto;
+    margin: 25px auto 15px;
 }
 
 .inputContainer {
     margin: 10px 0px 10px 0px;
+}
+
+.centeredInput {
+    text-align: center;
 }
 
 .inputContainer div {
@@ -54,10 +58,12 @@
     background-color: #ffffff;
     color: #000000;
     padding: 10px 0px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     border: 1px solid #000000;
-    border-radius: 5;
+    outline: none;
+    border-radius: 0px;
+    text-transform: uppercase;
 }
 
 .btnGroup {
@@ -80,22 +86,10 @@
     border: 1px solid #000000;
 }
 
-.btnContainer .btn:hover, .btnGroup .btn1:hover {
-    transition: all 1s ease;
-    background-color: #FD763C;
-    color: #ffffff;
-}
-
 .btnContainer div a {
     text-decoration: #000000 underline;
     color: #000000;
     font-size: 18px;
-}
-
-.btnContainer div a:hover {
-    transition: all 1s ease;
-    text-decoration: #FD763C underline;
-    color: #FD763C;
 }
 
 .condition {

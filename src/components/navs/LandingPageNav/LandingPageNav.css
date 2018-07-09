@@ -45,13 +45,21 @@
 }
 
 .collapse ul.navbar-nav li a {
-    color: #ffffff !important;
+    color: #ffffff ;
     text-decoration: none;
     font-size: 17px;
+    text-transform: uppercase;
 }
 
 .navbar-nav li.extraMargin {
     margin-right: 18%;
+}
+
+.landingSignUp{
+    padding: 8px !important;
+    margin: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
 }
 
 @media only screen and (max-width: 767px) {

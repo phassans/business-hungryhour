@@ -14,7 +14,7 @@ class LandingPageNav extends React.Component {
                 </div>
                 <div className='collapse navbar-collapse' id='nav-collapse'>
                     <ul className='nav navbar-nav'>
-                        <li><Link to="/Signup">Signup</Link></li>
+                        <li><Link to="/Signup" className='landingSignUp' >Signup</Link></li>
                         <li><Link to="/Login">Login</Link></li>
                         <li className='extraMargin' ><a href='#' >Plans 7 Pricing</a></li>
                         <li><a href='#' >Benefits</a></li>
