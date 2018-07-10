@@ -10,7 +10,9 @@ class LandingPageNav extends React.Component {
                     <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#nav-collapse' >
                         <i className="fas fa-bars "></i>
                     </button>
-                    <div className='navbar-brand logo' >Logo</div>
+                    <div className='navbar-brand logo' >
+                        <img src={require('../../../assets/logo.png')} style={{ width: 160, height: 25 }} />
+                    </div>
                 </div>
                 <div className='collapse navbar-collapse' id='nav-collapse'>
                     <ul className='nav navbar-nav'>

@@ -14,7 +14,9 @@ constructor(){
         let makeBlock = this.state.dropdown ? 'makeBlock' : '';
         return (
             <div className="navWithDropdown" >
-                <div className='navLogo' >Logo</div>
+                <div className='navLogo' >
+                <img src={require('../../../assets/logo.png')} style={{ width: 160, height: 25}} />
+                </div>
                 <div className="dropdown" >
                     <button type="button" >
                         <span className="glyphicon glyphicon-user"></span>

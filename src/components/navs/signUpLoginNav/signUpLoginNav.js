@@ -6,7 +6,7 @@ class SignUpLoginNav extends React.Component {
     render() {
         return (
             <div className="topnav" >
-                <div>Logo</div>
+                <div><img src={require('../../../assets/logo.png')} style={{ width: 160, height: 25}} /></div>
                 <Link className="nav" to={`/${this.props.btnTitle}`} >{this.props.btnTitle}</Link>
             </div>
         );
