@@ -1,40 +1,49 @@
-.ContainerStyle .startTime input, .ContainerStyle .endTime input{
+.ContainerStyle .startTime input, .ContainerStyle .endTime input {
     border: 1px solid #000000;
     padding: 5px 3px;
     border-radius: 2px;
     width: 100px;
     margin-right: 15px;
 }
-.ContainerStyle .startTime, .ContainerStyle .endTime{
+
+.ContainerStyle .startTime, .ContainerStyle .endTime {
     width: 180px;
 }
 
-.ContainerStyle div.dayName{
+.ContainerStyle .breakstartTime {
+    width: 180px ;
+}
+
+.ContainerStyle div.dayName {
     width: 150px;
     padding: 6px 30px;
 }
 
-.ContainerStyle .startTime input:focus, .ContainerStyle .endTime input:focus{
+.ContainerStyle .startTime input:focus, .ContainerStyle .endTime input:focus {
     border: 1px solid #FD763C;
 }
 
-.breakCheck{
+.breakCheck {
     text-align: center;
 }
 
-
-.ContainerStyle div{
-    width: 135px;
+.ContainerStyle div {
+    width: 100px;
     display: inline-block;
 }
 
-.list-square{
-    width: 8px !important ;
+.list-square {
+    width: 8px !important;
     height: 8px;
     border: 1px solid #000000;
     margin: 6px auto;
 }
 
+.breakText {
+    position: relative;
+    top: -12px;
+    left: 18px;
+}
 
 .container {
     display: block;
@@ -63,9 +72,10 @@
     left: 0;
     border: 1px solid #000000;
     box-shadow: 1.5px 1.5px #000000;
-    margin-left: 45%;
+    margin-left: 52%;
     height: 13px;
     width: 13px;
+    margin-top: -14px;
     background-color: #eee;
 }
 
@@ -104,14 +114,13 @@
     transform: rotate(45deg);
 }
 
-
-.checkboxContainer{
-text-align: center
+.checkboxContainer {
+    text-align: center;
+    width: 150px !important;
 }
 
-
-@media only screen and (max-width: 420px){
-    .ContainerStyle .startTime input, .ContainerStyle .endTime input{
+@media only screen and (max-width: 420px) {
+    .ContainerStyle .startTime input, .ContainerStyle .endTime input {
         width: 60px;
     }
 }
