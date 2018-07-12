@@ -25,12 +25,12 @@ h5 {
 }
 
 .cuisineContainer .row {
-    border: 1px solid #000000;
+    /* border: 1px solid #000000; */
 }
 
 .cuisineContainer .row .center {
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
+    /* border-left: 1px solid #000000;
+    border-right: 1px solid #000000; */
 }
 
 .cuisineContainer .row .col-md-4 label {
@@ -38,7 +38,7 @@ h5 {
 }
 
 .customiStyle input{
-    width: 100%;
+    width: 350px;
 }
 
 .centerInput{
@@ -47,6 +47,7 @@ h5 {
 }
 .customiStyle {
     padding-left: 0px;
+    width: 370px ;
 }
 
 @media only screen and (max-width: 1022px) {

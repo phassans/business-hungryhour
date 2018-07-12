@@ -29,7 +29,7 @@ class SignUpContainer extends Component {
 
         <div className='footer' >
           <div className='btnContainer' >
-            <Link to='/AddBusiness' className="btn">Sign Up</Link>
+            <Link to='/AddBusiness' className="btn orangeBtn">Sign Up</Link>
             <div className='orTxtMainCont' >
               <div className='orLineCont' ><div className='orLine' /></div>
               <div className='orTxt' >Or</div>
@@ -39,8 +39,14 @@ class SignUpContainer extends Component {
           </div>
 
           <div className="btnGroup" >
-            <button className="btn1"> <span><i class="fab fa-facebook-square"></i></span> Facebook</button>
-            <button className="btn1" > <span><i class="fab fa-google"></i></span> Google</button>
+            <button className="btn1"> <span>
+              <img src={require('../../assets/ficom.png')} style={{width: 25, height: 25}} />
+              {/* <i class="fab fa-facebook-square"></i> */}
+            </span> Facebook</button>
+            <button className="btn1" > <span>
+              <img src={require('../../assets/gicon.png')} style={{width: 25, height: 25}} />
+              {/* <i class="fab fa-google"></i> */}
+              </span> Google</button>
           </div>
 
           <div className="condition" >By clicking sign up, you agree to the Terms and Conditions of HungryHour.</div>

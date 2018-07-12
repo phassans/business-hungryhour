@@ -7,12 +7,10 @@ class BusinessContent extends Component {
         return (
             <AnimateHeight duration={500} height={height} >
                 <div className='inputMainContainer full' >
-                    <div className='inputContainer' >
-
+                    <div className='inputContainer'  >
                         <input type='text' placeholder='Business name' />
                     </div>
                     <div className='inputContainer' >
-
                         <input type='text' placeholder='Street' />
                     </div>
                     <div className='row centerInput' >
@@ -31,7 +29,7 @@ class BusinessContent extends Component {
                         <input type='text' placeholder='Business Phone' />
                     </div>
                     <div className='btnContainer' >
-                        <button className="btn" onClick={() => this.props.setState('first')}>Next</button>
+                        <button className="btn orangeBtn" onClick={() => this.props.setState('first')}>Next</button>
                     </div>
                 </div>
             </AnimateHeight>

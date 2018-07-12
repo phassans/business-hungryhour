@@ -57,7 +57,7 @@ class AddBusiness extends Component {
             <div className="navWithDropdown" >
                 <AddBusinessNav />
                 <div className="top-header" >
-                    <div className="heading" >You’re almost there!</div>
+                    <div className="heading" style={{marginTop: 45, fontSize: 27}} >You’re almost there!</div>
                     <div className='login' >Complete your business details</div>
                 </div>
 
@@ -69,20 +69,21 @@ class AddBusiness extends Component {
                         }
                     </div>
                     <BusinessContent initialState={firstSelect} setState={(v) => this.handleNext(v)} />
+                    <hr />
                     <div className={`businesslistHeading ${secondStatus}`} >2. Business Hours:
                     {
-                            secondSelect.edit ?
-                                <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 'auto', edit: false }, thirdSelect: { ...thirdSelect, edit: false, height: 0 } })} >edit</span> : null
-                        }
+                        secondSelect.edit ?
+                        <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 'auto', edit: false }, thirdSelect: { ...thirdSelect, edit: false, height: 0 } })} >edit</span> : null
+                    }
                     </div>
 
                     <BusinessContent1 initialState={this.state} setState={(v) => this.handleNext(v)} />
-
+<hr />
                     <div className={`businesslistHeading ${thirdStatus}`} >3. Cuisine type(s):
                     {
-                            thirdSelect.edit ?
-                                <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 0, edit: true }, thirdSelect: { ...thirdSelect, edit: true, height: 'auto' } })} >edit</span> : null
-                        }
+                        thirdSelect.edit ?
+                        <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 0, edit: true }, thirdSelect: { ...thirdSelect, edit: true, height: 'auto' } })} >edit</span> : null
+                    }
 
                     </div>
                     <AnimateHeight duration={500} height={thirdSelect.height} >
@@ -116,12 +117,13 @@ class AddBusiness extends Component {
                                     }
                                 </div>
                             </div>
-                            <div className='btnContainer' >
-                                <button className="btn" >Done!</button>
+                            <div className='btnContainer'  style={{marginTop: 20}} >
+                                <button className="btn orangeBtn" >Done!</button>
                             </div>
+                            <hr />
                             <p className='lastbusinessText' >You have successfully set up your business.</p>
                             <div className='btnContainer' >
-                                <button className="btn" >Create your first listing</button>
+                                <button className="btn orangeBtn" >Create your first listing</button>
                             </div>
                         </div>
                     </AnimateHeight>

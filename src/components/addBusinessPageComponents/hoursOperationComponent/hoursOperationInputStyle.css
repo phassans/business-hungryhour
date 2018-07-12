@@ -5,9 +5,17 @@
     width: 100px;
     margin-right: 15px;
 }
+.ContainerStyle .startTime, .ContainerStyle .endTime{
+    width: 180px;
+}
 
-.ContainerStyle div.dayName, .breakCheck{
+.ContainerStyle div.dayName{
+    width: 150px;
     padding: 6px 30px;
+}
+
+.ContainerStyle .startTime input:focus, .ContainerStyle .endTime input:focus{
+    border: 1px solid #FD763C;
 }
 
 .breakCheck{
@@ -16,7 +24,7 @@
 
 
 .ContainerStyle div{
-    width: 33%;
+    width: 135px;
     display: inline-block;
 }
 

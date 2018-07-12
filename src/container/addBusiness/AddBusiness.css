@@ -4,10 +4,11 @@
 }
 
 .businesslistHeading {
-    font-size: 16px;
-    text-decoration: underline;
+    font-size: 20px;
     cursor: pointer;
+    text-transform: uppercase;
     margin: 10px 0px;
+    font-weight: 600 ;
 }
 
 .businesslistHeading:hover {
@@ -25,6 +26,8 @@
 
 .businesslistHeading span.editTxt {
     color: #0046fe;
+    font-size: 15px;
+    text-transform: lowercase;
     text-decoration: underline;
     cursor: pointer;
     margin-left: 20px;

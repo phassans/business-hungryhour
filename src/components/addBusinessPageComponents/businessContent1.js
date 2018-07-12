@@ -35,7 +35,7 @@ class BusinessContent1 extends Component {
                     </div>
                 </div>
                 <div className='btnContainer clear' >
-                    <button className="btn" onClick={() => this.props.setState('second')}>Next</button>
+                    <button className="btn orangeBtn" onClick={() => this.props.setState('second')}>Next</button>
                 </div>
             </AnimateHeight>
         );

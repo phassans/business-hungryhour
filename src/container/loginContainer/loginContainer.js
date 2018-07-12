@@ -35,7 +35,7 @@ class LoginContainer extends Component {
 
         <div className='footer' >
           <div className='btnContainer' >
-            <button className="btn">Log in</button>
+            <button className="btn orangeBtn">Log in</button>
             <div className='orTxtMainCont' >
               <div className='orLineCont' ><div className='orLine' /></div>
               <div className='orTxt' >Or</div>
@@ -44,9 +44,16 @@ class LoginContainer extends Component {
             <div className='AnotherWayAdviceSL' >Log in with your Facebook or Google Account</div>
           </div>
           <div className="btnGroup" >
-            <button className="btn1"> <span><i class="fab fa-facebook-square"></i></span> Facebook</button>
-            <button className="btn1" > <span><i class="fab fa-google"></i></span> Google</button>
+            <button className="btn1"> <span>
+              <img src={require('../../assets/ficom.png')} style={{width: 25, height: 25}} />
+              {/* <i class="fab fa-facebook-square"></i> */}
+            </span> Facebook</button>
+            <button className="btn1" > <span>
+              <img src={require('../../assets/gicon.png')} style={{width: 25, height: 25}} />
+              {/* <i class="fab fa-google"></i> */}
+              </span> Google</button>
           </div>
+
         </div>
       </div>
     );
