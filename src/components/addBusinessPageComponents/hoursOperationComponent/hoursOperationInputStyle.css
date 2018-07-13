@@ -17,6 +17,8 @@
 .ContainerStyle div.dayName {
     width: 150px;
     padding: 6px 30px;
+    position: relative;
+    top: -12px;
 }
 
 .ContainerStyle .startTime input:focus, .ContainerStyle .endTime input:focus {
