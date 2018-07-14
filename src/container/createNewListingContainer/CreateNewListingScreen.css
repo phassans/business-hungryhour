@@ -1,0 +1,166 @@
+.addListQuestion1BtnGroup div:hover{
+    transition: all 1s ease;
+    background-color: #FD763C;
+    color: #ffffff;
+}
+.addListFirstSectionHeading:hover{
+    transition: all 1s ease;
+    color: #FD763C;
+}
+
+/* hover effect */
+.addListContent {
+    width: 95%;
+    margin: 40px auto 10px;
+}
+
+.addListHeaderContainer div {
+    display: inline-block;
+}
+
+.addListHeader{
+    text-transform: uppercase;
+}
+.addListHeader, .addListClose{
+    font-size: 22px;
+    font-weight: 700;
+}
+.addListClose{
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.addListClose:hover{
+    opacity: 0.5;
+}
+
+
+/* first question */
+
+
+.addListFirstQuestionContainer{
+    margin-top: 10px;
+}
+
+.addListFirstQuestion{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.addListQuestion1BtnGroup{
+    margin: 10px 0px;
+}
+
+.addListQuestion1BtnGroup div{
+    display: inline-block;
+    text-align: center;
+    width: 190px;
+    font-size: 18px;
+    border: 1px solid #000000;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+
+.addListQuestionActiveBtn{
+    background-color: #FD763C;
+    color: #ffffff;
+}
+
+/* first section */
+
+.addListFirstsectionContainer{
+    margin-top: 35px;
+}
+
+.addListFirstSectionHeading{
+    font-size: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 10px 0px;
+    font-weight: 600 ;
+    display: inline-block;
+}
+
+.addListFirstSectionHeadingActive{
+    color: #FD763C;
+}
+
+.addListDescription{
+    width: 350px;
+    padding: 10px;
+    font-size: 14px;
+}
+.addListDescription:focus{
+    outline: 0;
+    border:1px solid #FD763C ;
+}
+
+.addListEditTxt {
+    color: #0046fe;
+    font-size: 15px;
+    text-transform: lowercase;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.addListCheckBoxContainer{
+    width: 200px;
+    padding-left: 50px;
+    margin: 10px 0px;
+}
+
+.addListCheckBoxContainer label{
+    font-size: 13px;
+}
+.addListCheckBoxContainer span{
+    top: 16px;
+    left: -90px;
+}
+
+.addListScreenTimeMainContainer{
+    width: 300px;
+    margin-top: 20px;
+    /* background-color: #FD763C */
+}
+
+.addListScreenTimeMainContainer .addListScreenTimeContainer, .addListScreenTimeContainer1{
+    display: inline-block;
+}
+
+.addListScreenTimeContainer1{
+    float: right;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+.inputfile + label {
+    font-size: 16px;
+    color: #000000;
+    display: block;
+    overflow-wrap: break-word;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}

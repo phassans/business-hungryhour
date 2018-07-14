@@ -1,0 +1,39 @@
+.newlistNavBtn{
+ width: 80% !important;
+ display: block;
+ float: right;
+}
+.newListNavBtnRight a, .newListNavBtnLeft a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.newListNavBtnRight a:hover, .newListNavBtnLeft a:hover{
+    color: #FD763C;
+    background-color: #ffffff !important;
+    transition: all 1s ease;
+}
+
+.newlistNavBtn li {
+    display: inline-block;
+    float: left;
+}
+
+.newListNavBtnRight {
+    float: right !important;
+}
+
+.listRightBtnMargin{
+    margin-right: 30px;
+}
+
+.newListNavBtnRight a.link, .newListNavBtnLeft a.link{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.newListNavBtnRight div.dropdown button{
+    border-left: 0px;
+    padding: 16px 13px;
+}
