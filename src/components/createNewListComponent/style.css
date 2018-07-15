@@ -1,0 +1,25 @@
+.addListInputContGroup{
+    width: 350px;
+}
+.addListInputContGroup div{
+    display: inline-block;
+    width: 35%
+}
+.addListInputContGroup div input{
+    padding: 8px 10px;
+    width: 100%
+}
+.addListInputContGroup div.addListInputRightCont{
+    float: right;
+}
+
+.addListInputContGroup span{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.addListQBtnGroupSmall div{
+    width: 100px;
+    padding: 10px;
+}
