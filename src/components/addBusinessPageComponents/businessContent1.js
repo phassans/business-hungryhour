@@ -7,7 +7,7 @@ import { CuisineCheckBox } from './cuisineCheckbox/cuisineCheckbox';
 
 class BusinessContent1 extends Component {
     render() {
-        const { dayName, breakTime, cuisineType1, cuisineType2, cuisineType3, secondSelect } = this.props.initialState;
+        const { dayName, breakTime, secondSelect, breakCheckBox } = this.props.initialState;
         return (
             <AnimateHeight duration={500} height={secondSelect.height} >
                 <div className='hoursMainContainer' >
@@ -28,7 +28,7 @@ class BusinessContent1 extends Component {
                         {
                             breakTime.map((v, i) => {
                                 return (
-                                    <BreakOperationInput key={i} />
+                                    <BreakOperationInput handleCheckBox={() => this.props.handleCheckBox(i)} checked={breakCheckBox[i]} key={i} />
                                 )
                             })
                         }

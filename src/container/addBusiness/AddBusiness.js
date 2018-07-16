@@ -11,12 +11,13 @@ class AddBusiness extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstSelect: { status: true, height: 'auto', edit: false },
-            secondSelect: { status: false, height: 0, edit: false },
+            firstSelect: { status: true, height: 0, edit: false },
+            secondSelect: { status: false, height: 'auto', edit: false },
             thirdSelect: { status: false, height: 0, edit: false },
             fourthSelect: { status: false, height: 0, edit: false },
             dayName: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             breakTime: [1, 2, 3],
+            breakCheckBox: [true, false, false],
             cuisineType1: ['American', 'Asian', 'Asian Fusion', 'BBQ', 'Bubble Tea', 'Cafe', 'Chinese', 'Desserts', 'Fast Food', 'Greek'],
             cuisineType2: ['Halal', 'Hawaiian', 'Ice Cream and Frozen Yogurt', 'Indian', 'Italian', 'Japanese', 'Juice and Smoothies', 'Korean', 'Mediterranean', 'Mexican'],
             cuisineType3: ['Pizza', 'Salads', 'Sandwiches', 'Seafood', 'Sushi', 'Thai', 'Vegan Friendly', 'Vegetarian Friendly', 'Vietnamese', 'Wings'],
@@ -48,7 +49,16 @@ class AddBusiness extends Component {
         }
     }
 
+    handleCheckBox = (i) => {
+       let newCheckBoxArr = this.state.breakCheckBox;
+       newCheckBoxArr[i] = !newCheckBoxArr[i];
+       this.setState({
+           breakCheckBox: newCheckBoxArr
+       })
+    }
+
     render() {
+        console.log(this.state.breakCheckBox)
         const { firstSelect, secondSelect, thirdSelect, cuisineType1, cuisineType2, cuisineType3 } = this.state
         let firstStatus = firstSelect.status ? 'selected' : '';
         let secondStatus = secondSelect.status ? 'selected' : '';
@@ -77,7 +87,7 @@ class AddBusiness extends Component {
                     }
                     </div>
 
-                    <BusinessContent1 initialState={this.state} setState={(v) => this.handleNext(v)} />
+                    <BusinessContent1 handleCheckBox={this.handleCheckBox} initialState={this.state} setState={(v) => this.handleNext(v)} />
 <hr />
                     <div className={`businesslistHeading ${thirdStatus}`} >3. Cuisine type(s):
                     {

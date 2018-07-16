@@ -4,20 +4,42 @@
 
 /* ///////////////    Header Content     ////////////////////// */
 
-.headerContent{
-     border-bottom: 1px solid #000000;
+.landingPagebgimage {
+    background-image: url("../../assets/bgImage.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 360px;
+    padding: 30px 0px;
 }
 
-.heading{
+.landingPageheading {
     text-align: center;
     font-size: 25px;
     font-weight: 600;
-    margin: 50px 0px;
+    width: 75%;
+    margin: 0px auto;
+    color: #FD763C;
+    padding: 50px 0px 30px;
+}
+
+.landingPageheading1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.landingPageBannerContent {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 300px;
+    margin: 0px auto;
 }
 
 .buttonContainer {
     text-align: center;
-    margin-bottom: 90px ;
+    padding-bottom: 90px;
 }
 
 .buttonContainer .btn {
@@ -30,25 +52,124 @@
     text-transform: uppercase;
 }
 
-
-/* ///////////  sections  /////////// */
-.section1, .section2 {
-    height: 250px;
-    width: 100%;
-    border-bottom: 1px solid #000000;
-    font-size: 17px;
-    padding: 10px;
+.landingPageheaderBtn .btn {
+    background-color: #FD763C;
+    color: #ffffff;
+    border: none;
+    outline: none;
 }
 
+.section1ChildContainer {
+    text-align: center;
+    margin: 10px auto;
+    width: 90%;
+}
+
+.landingPageSection1Heading {
+    color: #000000;
+    padding: 20px 0px 0px;
+}
+
+.section1ChildContainer p, .landingPageListContainer {
+    margin: 10px auto;
+    width: 80%;
+}
+
+.section1CardContainer {
+    margin: 80px auto 50px;
+}
+
+.section1CardContainer .landinPageCard {
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.section1CardContainer .landinPageCard img {
+    width: 90px;
+    height: 90px;
+}
+
+.landinPageCard h4 {
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.landinPageCard p {
+    color: gray;
+    font-size: 14px;
+    padding: 0px 20px 10px;
+}
+
+.section1CardContainer .landinPageCard:hover {
+    transition: all 1s ease;
+    opacity: 0.5;
+}
+
+/* ///////////  sections 2  /////////// */
+.section2 {
+    background-color: #ede9e8;
+}
+
+.landingPageListContainer div{
+    display: inline;
+}
+
+.landingPageListContainer{
+    padding: 20px 0px 40px;
+}
+
+.landingPageListNum {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FD763C;
+    width: 5%;
+}
+
+.landingPageListContentCont {
+    color: #635f5c;
+    /* width: 95%; */
+}
+
+.landingPageListContentCont .landingPageListContentHeading {
+    color: #635f5c;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 16px;
+}
+.landingPageListContentCont p{
+    margin-left: 40px;
+    color: #635f5c;
+    width: 90%;
+}
 /* ////////     footer    ///////////// */
 
-.footer-heading{
-    font-size: 20px;
+.landingPageQuoteContainer{
+    height: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #635f5c;
     text-align: center;
-    font-weight: 400;
-    margin: 20px 0px;
+    padding-top: 55px;
 }
 
+
+.footerContent{
+    background-color: #FD763C;
+    padding-top: 30px
+}
+
+.footerContent .buttonContainer{
+    margin-top: 30px;
+    padding-bottom: 80px;
+}
+.footer-heading {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+}
 
 @media only screen and (max-width: 450px) {
     .btnContainer .btn {

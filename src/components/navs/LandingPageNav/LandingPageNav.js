@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class LandingPageNav extends React.Component {
     render() {
         return (
-            <nav className="navbar navbar-default">
+            <nav className="navbar navbar-default" style={{marginBottom: 0}} >
                 <div className='navbar-header' >
                     <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#nav-collapse' >
                         <i className="fas fa-bars "></i>

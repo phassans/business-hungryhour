@@ -72,15 +72,15 @@ export class BreakOperationInput extends Component {
                 <div className='row ContainerStyle' >
                     <div className='checkboxContainer'>
                         <label className="container">
-                            <input type="checkbox" />
+                            <input type="checkbox" onChange={() => this.props.handleCheckBox()} checked={this.props.checked} />
                             <span className="checkmark"></span>
                         </label>
                     </div>
-                    <div className='breakstartTime' >
+                    <div className='breakstartTime' style={{visibility: this.props.checked ? 'visible' : 'hidden'}} >
                         <Dropdown options={options} onChange={(v) => this._onSelect(v, 'first')} value={defaultOption} />
                         <span className='breakText' >to</span>
                     </div>
-                    <div className='endTime' >
+                    <div className='endTime' style={{visibility: this.props.checked ? 'visible' : 'hidden'}} >
                         <Dropdown options={options} onChange={(v) => this._onSelect(v, 'second')} value={defaultOption1} />
                     </div>
                 </div>
