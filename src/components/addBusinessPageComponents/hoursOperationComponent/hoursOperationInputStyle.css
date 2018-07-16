@@ -6,6 +6,20 @@
     margin-right: 15px;
 }
 
+.addBusinessCheckBoxContainer .container{
+    font-size: 13px;
+    bottom: 11px;
+}
+.addBusinessCheckBoxContainer{
+    width: 200px !important;
+    padding-left: 50px;
+    margin: 0px;
+}
+.addBusinessCheckBoxContainer span{
+    top: 15px;
+    left: -86px;
+}
+
 .ContainerStyle .startTime, .ContainerStyle .endTime {
     width: 180px;
 }

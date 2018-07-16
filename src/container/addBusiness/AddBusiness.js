@@ -11,13 +11,14 @@ class AddBusiness extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstSelect: { status: true, height: 0, edit: false },
-            secondSelect: { status: false, height: 'auto', edit: false },
+            firstSelect: { status: true, height: 'auto', edit: false },
+            secondSelect: { status: false, height: 0, edit: false },
             thirdSelect: { status: false, height: 0, edit: false },
             fourthSelect: { status: false, height: 0, edit: false },
             dayName: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             breakTime: [1, 2, 3],
-            breakCheckBox: [true, false, false],
+            breakCheckBox: [false, false, false],
+            daysCheckBox: [false, false, false, false, false, false, false],
             cuisineType1: ['American', 'Asian', 'Asian Fusion', 'BBQ', 'Bubble Tea', 'Cafe', 'Chinese', 'Desserts', 'Fast Food', 'Greek'],
             cuisineType2: ['Halal', 'Hawaiian', 'Ice Cream and Frozen Yogurt', 'Indian', 'Italian', 'Japanese', 'Juice and Smoothies', 'Korean', 'Mediterranean', 'Mexican'],
             cuisineType3: ['Pizza', 'Salads', 'Sandwiches', 'Seafood', 'Sushi', 'Thai', 'Vegan Friendly', 'Vegetarian Friendly', 'Vietnamese', 'Wings'],
@@ -49,12 +50,15 @@ class AddBusiness extends Component {
         }
     }
 
-    handleCheckBox = (i) => {
-       let newCheckBoxArr = this.state.breakCheckBox;
-       newCheckBoxArr[i] = !newCheckBoxArr[i];
-       this.setState({
-           breakCheckBox: newCheckBoxArr
-       })
+    handleCheckBox = (i, v) => {
+        const { breakCheckBox, daysCheckBox } = this.state; ;
+        if (v === 'break') {
+            breakCheckBox[i] = !breakCheckBox[i];
+            this.setState({ breakCheckBox })
+        }else if( v === 'hours' ){
+            daysCheckBox[i] = !daysCheckBox[i];
+            this.setState({ daysCheckBox })
+        }
     }
 
     render() {
@@ -67,7 +71,7 @@ class AddBusiness extends Component {
             <div className="navWithDropdown" >
                 <AddBusinessNav />
                 <div className="top-header" >
-                    <div className="heading" style={{marginTop: 45, fontSize: 27}} >You’re almost there!</div>
+                    <div className="heading" style={{ marginTop: 45, fontSize: 27 }} >You’re almost there!</div>
                     <div className='login' >Complete your business details</div>
                 </div>
 
@@ -82,18 +86,18 @@ class AddBusiness extends Component {
                     <hr />
                     <div className={`businesslistHeading ${secondStatus}`} >2. Business Hours:
                     {
-                        secondSelect.edit ?
-                        <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 'auto', edit: false }, thirdSelect: { ...thirdSelect, edit: false, height: 0 } })} >edit</span> : null
-                    }
+                            secondSelect.edit ?
+                                <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 'auto', edit: false }, thirdSelect: { ...thirdSelect, edit: false, height: 0 } })} >edit</span> : null
+                        }
                     </div>
 
                     <BusinessContent1 handleCheckBox={this.handleCheckBox} initialState={this.state} setState={(v) => this.handleNext(v)} />
-<hr />
+                    <hr />
                     <div className={`businesslistHeading ${thirdStatus}`} >3. Cuisine type(s):
                     {
-                        thirdSelect.edit ?
-                        <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 0, edit: true }, thirdSelect: { ...thirdSelect, edit: true, height: 'auto' } })} >edit</span> : null
-                    }
+                            thirdSelect.edit ?
+                                <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 0, edit: true }, thirdSelect: { ...thirdSelect, edit: true, height: 'auto' } })} >edit</span> : null
+                        }
 
                     </div>
                     <AnimateHeight duration={500} height={thirdSelect.height} >
@@ -127,7 +131,7 @@ class AddBusiness extends Component {
                                     }
                                 </div>
                             </div>
-                            <div className='btnContainer'  style={{marginTop: 20}} >
+                            <div className='btnContainer' style={{ marginTop: 20 }} >
                                 <button className="btn orangeBtn" >Done!</button>
                             </div>
                             <hr />

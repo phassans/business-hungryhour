@@ -10,8 +10,8 @@ export class HoursOperationInput extends Component {
     constructor() {
         super();
         this.state = {
-            selected: ' ',
-            selected1: ' '
+            selected: 'Start Time',
+            selected1: 'End Time'
         }
         this._onSelect = this._onSelect.bind(this)
     }
@@ -30,12 +30,18 @@ export class HoursOperationInput extends Component {
         const defaultOption1 = this.state.selected1
         return (
             <div className='row ContainerStyle' >
-                <div className='dayName' >{this.props.dayName}</div>
-                <div className='breakstartTime' >
+                <div className='addBusinessCheckBoxContainer'>
+                    <label className="container">
+                        <input type="checkbox" onChange={() => this.props.handleCheckBox()} checked={this.props.checked} />
+                        <span className="checkmark"></span>
+                        {this.props.dayName}
+                    </label>
+                </div>
+                <div className='breakstartTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
                     <Dropdown options={options} onChange={(v) => this._onSelect(v, 'first')} value={defaultOption} />
                     <span className='breakText' >to</span>
                 </div>
-                <div className='endTime' >
+                <div className='endTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
                     <Dropdown options={options} onChange={(v) => this._onSelect(v, 'second')} value={defaultOption1} />
                 </div>
             </div>
@@ -48,8 +54,8 @@ export class BreakOperationInput extends Component {
     constructor() {
         super();
         this.state = {
-            selected: ' ',
-            selected1: ' '
+            selected: 'Start Time',
+            selected1: 'End Time'
         }
         this._onSelect = this._onSelect.bind(this)
     }
@@ -76,11 +82,11 @@ export class BreakOperationInput extends Component {
                             <span className="checkmark"></span>
                         </label>
                     </div>
-                    <div className='breakstartTime' style={{visibility: this.props.checked ? 'visible' : 'hidden'}} >
+                    <div className='breakstartTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
                         <Dropdown options={options} onChange={(v) => this._onSelect(v, 'first')} value={defaultOption} />
                         <span className='breakText' >to</span>
                     </div>
-                    <div className='endTime' style={{visibility: this.props.checked ? 'visible' : 'hidden'}} >
+                    <div className='endTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
                         <Dropdown options={options} onChange={(v) => this._onSelect(v, 'second')} value={defaultOption1} />
                     </div>
                 </div>
