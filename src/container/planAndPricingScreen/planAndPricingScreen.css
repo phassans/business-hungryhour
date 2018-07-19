@@ -1,0 +1,80 @@
+.PAPContainer {
+    width: 95%;
+    margin: 40px auto 10px;
+}
+
+.PAPHeaderContainer div {
+    display: inline-block;
+}
+
+.PAPHeader {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.PAPRightTxt {
+    font-size: 17px;
+    float: right;
+    cursor: pointer;
+}
+
+.PAPRightTxt a {
+    text-decoration: underline;
+}
+
+/* ///////////////// header end   ////////////// */
+
+.PAPSection ul {
+    list-style: none;
+    margin: 40px 0px ;
+}
+
+.PAPSection ul li {
+    border: 1px solid #000000;
+    width: 24%;
+    float: left;
+    padding: 20px 20px 40px;
+}
+
+.PAPPlansHeading {
+    font-size: 21px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+
+.PAPOffersText {
+    font-size: 25px;
+    font-weight: bold;
+    color: #dddddd;
+}
+
+.PAPOffersdetails {
+    font-size: 18px;
+    margin: 30px 0px 40px;
+}
+
+.PAPSelectBtn{
+    background-color: #FD763C;
+    color: #ffffff;
+    width: 100%;
+    margin: 60px auto 0px;
+    font-size: 24px;
+    padding: 10px 0px;
+    font-weight: bold; 
+    border: 0px;
+    outline: none;
+}
+
+.PAPSelectBtn:hover{
+    transition: all 1s ease;
+    opacity: 0.7;
+}
+.PAPSecondLi{
+    border-left-width: 0px !important;
+    border-right-width: 0px !important;
+}
+.PAPThirdLi{
+    border-left-width: 0px !important;
+}

@@ -74,6 +74,14 @@
     user-select: none;
 }
 
+.addBusinessCheckBoxContainer .container .checkmarklabel{
+    visibility: hidden;
+}
+
+.breakContainerCheckBox span.checkmark{
+    left: -20px;
+}
+
 /* Hide the browser's default checkbox */
 .container input {
     position: absolute;

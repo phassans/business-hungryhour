@@ -1,0 +1,58 @@
+.BillingDetailsHeading {
+    color: #000000;
+    font-size: 18px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.billingPlanContainer {
+    border: 1px solid #000000;
+    padding: 20px 40px 40px 20px;
+    margin: 30px 0px 60px;
+}
+
+.billingPlanHeader div {
+    display: inline;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.billingPlanHeaderRight {
+    float: right;
+    cursor: pointer;
+}
+
+.billingPlanHeaderRight:hover {
+    color: #0046fe;
+    border-bottom: 1px solid #0046fe;
+}
+
+.billingPlanSection > div {
+    display: inline-block;
+    margin: 20px 0px 0px;
+}
+
+.billingPlanSectionP1 {
+    font-size: 18px;
+}
+
+.billingPlanSectionP1 > span {
+    color: #000000;
+    font-weight: bold;
+}
+
+.billingPlanSectionP2 {
+    float: right;
+}
+
+.billingPlanSectionP2 button {
+    width: 300px;
+    background-color: #FD763C;
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 0px;
+    border-width: 0px;
+    outline: none;
+}

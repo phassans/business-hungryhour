@@ -74,21 +74,20 @@ export class BreakOperationInput extends Component {
         const defaultOption1 = this.state.selected1
 
         return (
-            <div className='breaksContainer' >
-                <div className='row ContainerStyle' >
-                    <div className='checkboxContainer'>
-                        <label className="container">
-                            <input type="checkbox" onChange={() => this.props.handleCheckBox()} checked={this.props.checked} />
-                            <span className="checkmark"></span>
-                        </label>
-                    </div>
-                    <div className='breakstartTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
-                        <Dropdown options={options} onChange={(v) => this._onSelect(v, 'first')} value={defaultOption} />
-                        <span className='breakText' >to</span>
-                    </div>
-                    <div className='endTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
-                        <Dropdown options={options} onChange={(v) => this._onSelect(v, 'second')} value={defaultOption1} />
-                    </div>
+            <div className='row ContainerStyle' >
+                <div className='addBusinessCheckBoxContainer breakContainerCheckBox'>
+                    <label className="container">
+                        <input type="checkbox" onChange={() => this.props.handleCheckBox()} checked={this.props.checked} />
+                        <span className="checkmark"></span>
+                        <span className='checkmarklabel' >{this.props.dayName}</span>
+                    </label>
+                </div>
+                <div className='breakstartTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
+                    <Dropdown options={options} onChange={(v) => this._onSelect(v, 'first')} value={defaultOption} />
+                    <span className='breakText' >to</span>
+                </div>
+                <div className='endTime' style={{ visibility: this.props.checked ? 'visible' : 'hidden' }} >
+                    <Dropdown options={options} onChange={(v) => this._onSelect(v, 'second')} value={defaultOption1} />
                 </div>
             </div>
         )

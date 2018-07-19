@@ -1,0 +1,30 @@
+
+.MyAccountContainer{
+    width: 90%;
+    margin: 50px auto;
+}
+
+.MAHeading{
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.MAheaderTab{
+    padding-left: 0px;
+}
+
+.MAheaderTab > li{
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.MAheaderTab li a{
+    /* color: #FD763C; */
+    color: #0046fe;
+}
+
+.MAheaderTab2{
+    margin-left: 50px;
+}

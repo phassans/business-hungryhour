@@ -16,9 +16,8 @@ class AddBusiness extends Component {
             thirdSelect: { status: false, height: 0, edit: false },
             fourthSelect: { status: false, height: 0, edit: false },
             dayName: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-            breakTime: [1, 2, 3],
-            breakCheckBox: [false, false, false],
-            daysCheckBox: [false, false, false, false, false, false, false],
+            breakCheckBox: [false, false, false, false, false, false, false],
+            daysCheckBox: [true, true, true, true, true, true, true],
             cuisineType1: ['American', 'Asian', 'Asian Fusion', 'BBQ', 'Bubble Tea', 'Cafe', 'Chinese', 'Desserts', 'Fast Food', 'Greek'],
             cuisineType2: ['Halal', 'Hawaiian', 'Ice Cream and Frozen Yogurt', 'Indian', 'Italian', 'Japanese', 'Juice and Smoothies', 'Korean', 'Mediterranean', 'Mexican'],
             cuisineType3: ['Pizza', 'Salads', 'Sandwiches', 'Seafood', 'Sushi', 'Thai', 'Vegan Friendly', 'Vegetarian Friendly', 'Vietnamese', 'Wings'],
@@ -62,7 +61,6 @@ class AddBusiness extends Component {
     }
 
     render() {
-        console.log(this.state.breakCheckBox)
         const { firstSelect, secondSelect, thirdSelect, cuisineType1, cuisineType2, cuisineType3 } = this.state
         let firstStatus = firstSelect.status ? 'selected' : '';
         let secondStatus = secondSelect.status ? 'selected' : '';
@@ -137,7 +135,7 @@ class AddBusiness extends Component {
                             <hr />
                             <p className='lastbusinessText' >You have successfully set up your business.</p>
                             <div className='btnContainer' >
-                                <button className="btn orangeBtn" >Create your first listing</button>
+                                <Link to='/CreateList' className="btn orangeBtn" >Create your first listing</Link>
                             </div>
                         </div>
                     </AnimateHeight>

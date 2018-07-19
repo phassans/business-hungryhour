@@ -1,0 +1,65 @@
+.ASLoginDetailsContainer{
+    padding-bottom: 20px;
+}
+.ASAfterHeadingCont{
+    margin-bottom: 20px;
+}
+
+.ASLoginDetails > div{
+   font-size: 17px;
+   color: #000000;
+}
+
+.ASLoginDetails > .ASLoginDetailshead{
+    font-weight: bold;
+}
+
+.ASLoginDetailsCernter{
+    margin: 20px 0px;
+
+}
+
+.ASHeading{
+    display: inline-block;
+}
+
+.ASSummaryEdit{
+    color: #0046fe;
+    font-size: 14px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.ASSummaryEdit:hover{
+    border-bottom: 1px solid #0046fe;
+    opacity: 0.7;
+}
+
+.ASLoginDetailsDays{
+    font-weight: bold;
+    width: 125px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.ASLoginDetailsDays + span{
+    font-size: 15px;
+}
+
+.ASBusinessDetailContainer{
+    list-style: none;
+    padding-left: 0px;
+}
+
+.ASBusinessDetailContainer > li{
+    display: inline-table;
+    width: 50%;
+}
+
+.ASLoginDetails > a{
+    color: #0046fe;
+    font-size: 17px;
+}
+.ASLoginDetails > a:hover{
+    border-bottom: 1px solid #0046fe;
+}
