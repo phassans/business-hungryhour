@@ -11,13 +11,13 @@ class LandingPageNav extends React.Component {
                         <i className="fas fa-bars "></i>
                     </button>
                     <div className='navbar-brand logo' >
-                        <img src={require('../../../assets/logo.png')} style={{ width: 160, height: 25 }} />
+                    <Link to='/' >  <img src={require('../../../assets/logo.png')} className='logoImage' /> </Link>
                     </div>
                 </div>
                 <div className='collapse navbar-collapse' id='nav-collapse'>
-                    <ul className='nav navbar-nav'>
-                        <li><Link to="/Signup" className='landingSignUp' >Signup</Link></li>
-                        <li><Link to="/Login">Login</Link></li>
+                    <ul className='nav navbar-nav landingPageNavLinks'>
+                        <li><Link to="/Signup" className='landingSignUp' >Sign Up</Link></li>
+                        <li><Link to="/Login">Log In</Link></li>
                         <li className='extraMargin' ><a href='#' >Plans 7 Pricing</a></li>
                         <li><a href='#' >Benefits</a></li>
                         <li><a href='#' >OverView</a></li>

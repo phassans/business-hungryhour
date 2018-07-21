@@ -11,14 +11,14 @@ class LoginContainer extends Component {
         <NavBar btnTitle='Signup' />
 
         <div className="top-header" >
-          <div className="heading" >Log into your account</div>
-          <div className='login' >Don’t have an account? <Link to="/Signup">Signup</Link></div>
+          <div className="heading" >Log in to your account</div>
+          <div className='login' >Don’t have an account? <Link to="/Signup">Sign Up</Link></div>
         </div>
 
         <div className='inputMainContainer' >
           <div className='inputContainer centeredInput' >
             <div>Enter your Email</div>
-            <input type='text' />
+            <input type='text' placeholder='Email' />
           </div>
           <div className='inputContainer centeredInput' >
             <div>Enter your Password</div>
@@ -30,7 +30,7 @@ class LoginContainer extends Component {
             <span style={{ marginLeft: '1%', marginTop: '2px', }} className="checkmark"></span>
           </label>
           <div className='flink' ><a href='#' >Forgot username or password?</a></div>
-          <div className='flink' ><a href='#' >Log in with SSO</a></div>
+          {/* <div className='flink' ><a href='#' >Log in with SSO</a></div> */}
         </div>
 
         <div className='footer' >

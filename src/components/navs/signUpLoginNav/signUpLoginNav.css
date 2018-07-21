@@ -1,3 +1,9 @@
+.logoImage{
+    width: 170px; 
+    height: 30px;
+}
+
+
 .topnav {
     font-family: 'Lato', sans-serif;
     background-color: #FD763C;
@@ -15,6 +21,9 @@
 
 .topnav .nav {
     float: right;
+}
+.SLPageNavbar > .nav{
+    padding: 17px 16px;
 }
 
 .topnav .nav:hover {

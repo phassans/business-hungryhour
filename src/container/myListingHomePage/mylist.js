@@ -3,12 +3,6 @@ import './mylist.css';
 import { Route, Link } from 'react-router-dom';
 
 class MyList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
-
     render() {
         // console.log(this.props.list)
         return (
@@ -36,7 +30,17 @@ class MyList extends Component {
                                         <td>{v.time}</td>
                                         <td>{v.recurring}</td>
                                         <td>{v.status}</td>
-                                        <td><i className="fas fa-ellipsis-h"></i></td>
+                                        <td>
+                                            <div className="dropdownML" >
+                                                <a href='javascript:void(0)' onClick={() => this.props.handleDropDown(i)} >
+                                                    <i style={{ color: '#000000' }} className="fas fa-ellipsis-h"></i>
+                                                </a>
+                                                <div className={`dropdown-content ${v.dropdown ? 'makeBlock' : ''}`}>
+                                                    <Link to='/CreateList' >Edit</Link>
+                                                    <a href="javascript:void(0)" >Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 )
                             })

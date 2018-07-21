@@ -25,7 +25,7 @@ class AccountSummary extends Component {
                     </div>
                 </div>
                 <div>
-                    <div className='BillingDetailsHeading ASHeading' >Login Details:</div><span className='ASSummaryEdit' >Edit</span>
+                    <div className='BillingDetailsHeading ASHeading' >Log in Details:</div><span className='ASSummaryEdit' >Edit</span>
                     <div className='billingPlanContainer ASLoginDetailsContainer ASAfterHeadingCont' >
                         <div className='ASLoginDetails' >
                             <div className='ASLoginDetailshead' >Name</div>
@@ -72,37 +72,47 @@ class AccountSummary extends Component {
                                 </div>
                             </li>
                         </ul>
-                        <div className='ASLoginDetails' >
-                            <div className='ASLoginDetailshead' >Business hours:</div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Monday:</span>
-                                <span>Closed</span>
-                            </div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Tuesday:</span>
-                                <span>12pm-9pm</span>
-                            </div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Wednesday:</span>
-                                <span>12pm-9pm</span>
-                            </div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Thursday:</span>
-                                <span>12pm-9pm</span>
-                            </div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Friday:</span>
-                                <span>12pm-9pm</span>
-                            </div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Saturday:</span>
-                                <span>12pm-9pm</span>
-                            </div>
-                            <div>
-                                <span className='ASLoginDetailsDays' >Sunday:</span>
-                                <span>Closed</span>
-                            </div>
-                        </div>
+                        <ul className='ASBusinessDetailContainer' >
+                            <li>
+                                <div className='ASLoginDetails' >
+                                    <div className='ASLoginDetailshead' >Business hours:</div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Monday:</span>
+                                        <span>Closed</span>
+                                    </div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Tuesday:</span>
+                                        <span>12pm-9pm</span>
+                                    </div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Wednesday:</span>
+                                        <span>12pm-9pm</span>
+                                    </div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Thursday:</span>
+                                        <span>12pm-9pm</span>
+                                    </div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Friday:</span>
+                                        <span>12pm-9pm</span>
+                                    </div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Saturday:</span>
+                                        <span>12pm-9pm</span>
+                                    </div>
+                                    <div>
+                                        <span className='ASLoginDetailsDays' >Sunday:</span>
+                                        <span>Closed</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='ASLoginDetails' >
+                                    <div className='ASLoginDetailshead' >Contact Number:</div>
+                                    <div>00000000000000</div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div >

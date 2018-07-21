@@ -24,10 +24,21 @@ class BusinessContent extends Component {
                             <input type='text' placeholder='Zip Code' />
                         </div>
                     </div>
-                    <div className='inputContainer' >
-
-                        <input type='text' placeholder='Business Phone' />
+                    <div className='row centerInput' >
+                        <div className='inputContainer col-md-4 col-sm-12 customiStyle' >
+                            <input type='text' placeholder='Business Phone' />
+                        </div>
+                        <div className='inputContainer col-md-4 col-sm-12 customiStyle' >
+                            <input type='text' placeholder='Business URL' />
+                        </div>
+                        <div className='inputContainer col-md-4 col-sm-12 customiStyle' >
+                            {/* <input type='text' placeholder='Zip Code' /> */}
+                        </div>
                     </div>
+                    {/* <div className='inputContainer' >
+
+                        <input type='text'  />
+                    </div> */}
                     <div className='btnContainer' >
                         <button className="btn orangeBtn" onClick={() => this.props.setState('first')}>Next</button>
                     </div>

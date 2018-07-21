@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import './addBusinessNav.css';
 import AnimateHeight from 'react-animate-height';
-
+import { Link } from 'react-router-dom';
 class AddBusinessNav extends Component {
-constructor(){
-    super();
-    this.state ={
-        dropdown: false,
+    constructor() {
+        super();
+        this.state = {
+            dropdown: false,
+        }
     }
-}
 
     render() {
         let makeBlock = this.state.dropdown ? 'makeBlock' : '';
         return (
-            <div className="navWithDropdown" >
+            <div className="navWithDropdown nav navbar-default" >
                 <div className='navLogo' >
-                <img src={require('../../../assets/logo.png')} style={{ width: 160, height: 25}} />
+                    <Link to='/' >  <img src={require('../../../assets/logo.png')} className='logoImage' /> </Link>
                 </div>
                 <div className="dropdown" >
-                    <button type="button" >
+                    <button type="button" onClick={() => this.setState({ dropdown: !this.state.dropdown })} >
                         <span className="glyphicon glyphicon-user"></span>
+                        <i className="fas fa-caret-down dropDownIcon"></i>
                     </button>
-                    <a href="#" onClick={() => this.setState({dropdown: !this.state.dropdown })} ><i className="fas fa-caret-down"></i></a>
                     <div className={`dropdown-content ${makeBlock}`}>
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>

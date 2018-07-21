@@ -1,15 +1,32 @@
-.newlistNavBtn{
- width: 80% !important;
- display: block;
- float: right;
+.newlistNavBtn {
+    width: 80% !important;
+    display: block;
+    float: right;
 }
-.newListNavBtnRight a, .newListNavBtnLeft a{
+
+.newListNavBtnRight a, .newListNavBtnLeft a {
     color: #ffffff;
     text-decoration: none;
     font-size: 17px;
+}
+.newListNavBtnRight a{
     text-transform: uppercase;
 }
-.newListNavBtnRight a:hover, .newListNavBtnLeft a:hover{
+.CLBorderButton > a {
+    padding: 8px !important;
+    margin: 6px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+}
+
+.dropdown-content > a {
+    color: #000000;
+}
+.dropdown-content > a:hover {
+    color: #aaaaaa !important;
+}
+
+.newListNavBtnRight a:hover, .newListNavBtnLeft a:hover {
     color: #FD763C;
     background-color: #ffffff !important;
     transition: all 1s ease;
@@ -24,16 +41,15 @@
     float: right !important;
 }
 
-.listRightBtnMargin{
+.listRightBtnMargin {
     margin-right: 30px;
 }
 
-.newListNavBtnRight a.link, .newListNavBtnLeft a.link{
-    padding-top: 16px;
-    padding-bottom: 16px;
+.newListNavBtnRight a.link, .newListNavBtnLeft a.link {
+  padding: 17px 16px;
 }
 
-.newListNavBtnRight div.dropdown button{
+.newListNavBtnRight div.dropdown button {
     border-left: 0px;
-    padding: 16px 13px;
+    padding: 17px 13px;
 }

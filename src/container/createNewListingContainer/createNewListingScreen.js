@@ -98,13 +98,12 @@ class CreateNewListingContainer extends Component {
                 <div className='addListContent' >
                     <div className='addListHeaderContainer' >
                         <div className='addListHeader' >New Listing</div>
-                        <div className='addListClose' >X</div>
                     </div>
                     <div className='addListFirstQuestionContainer' >
                         <div className='addListFirstQuestion' >What type of deal do you want to list? </div>
                         <div className='addListQuestion1BtnGroup' >
                             <div onClick={() => this._handleAnswerSelection('1.1')} className={`addListQuestion1Btn1 ${question1.select1 ? 'addListQuestionActiveBtn' : ''}`} >Meal</div>
-                            <div onClick={() => this._handleAnswerSelection('1.2')} className={`addListQuestion1Btn2 ${question1.select2 ? 'addListQuestionActiveBtn' : ''}`} >Happy Hour (% off )</div>
+                            <div onClick={() => this._handleAnswerSelection('1.2')} className={`addListQuestion1Btn2 ${question1.select2 ? 'addListQuestionActiveBtn' : ''}`} >Happy Hour</div>
                         </div>
                     </div>
 

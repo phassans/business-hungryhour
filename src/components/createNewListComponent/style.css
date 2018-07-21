@@ -23,3 +23,44 @@
     width: 100px;
     padding: 10px;
 }
+
+.inputContainerpositionRelative, .priceHH, .percentOffCont{
+    position: relative;
+}
+
+.percentOffCont > span{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.percentOffCont > input{
+    padding-right: 48px !important;
+    outline: none;
+}
+
+.inputContainerpositionRelative > .dollarSign{
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    font-size: 14px;
+}
+
+.inputContainerpositionRelative > input {
+    padding-left: 24px;
+}
+
+.priceHH > input{
+    padding-left: 25px !important;
+    outline: none;
+}
+
+.priceHH > input:focus, .percentOffCont > input:focus{
+    border: 1px solid #FD763C;
+}
+.priceHH > .dollarSign{
+    position: absolute;
+    font-size: 14px;
+    top: 10px;
+    left: -2px;
+}

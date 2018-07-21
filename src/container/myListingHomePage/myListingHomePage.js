@@ -14,7 +14,8 @@ class myListingHomePage extends Component {
                 date: '6/28/18-6/28/18',
                 time: '5pm-7pm',
                 recurring: 'No',
-                status: 'Ended'
+                status: 'Ended',
+                dropdown: false,
             },
             {
                 name: '40% all beer',
@@ -22,7 +23,8 @@ class myListingHomePage extends Component {
                 date: '4/30/18-8/30/18',
                 time: '3pm-5pm',
                 recurring: 'Monday',
-                status: 'Active'
+                status: 'Active',
+                dropdown: false,
             },
             {
                 name: '$6 all appetizers',
@@ -30,10 +32,28 @@ class myListingHomePage extends Component {
                 date: '8/12/18-9/12/18',
                 time: '1pm-4pm',
                 recurring: 'Sunday, Monday',
-                status: 'Scheduled'
+                status: 'Scheduled',
+                dropdown: false,
             },
             ]
         }
+    }
+
+    handleDropDown(i) {
+        let list = this.state.list;
+        console.log(list[i].dropdown)
+        if (list[i].dropdown) {
+            list[i].dropdown = !list[i].dropdown
+        } else {
+            for (var v = 0; v < list.length; v++) {
+                if (list[v].dropdown) {
+                    list[v].dropdown = false
+                    break;
+                }
+            }
+            list[i].dropdown = !list[i].dropdown;
+        }
+        this.setState({ list })
     }
 
     render() {
@@ -59,7 +79,7 @@ class myListingHomePage extends Component {
                     </ul>
 
                     <div>
-                        <Route path='/MyListing/all' exact render={(props) => <MyList {...props} list={this.state.list} />} />
+                        <Route path='/MyListing/all' exact render={(props) => <MyList {...props} handleDropDown={this.handleDropDown.bind(this)} list={this.state.list} />} />
                         <Route path='/MyListing/active' render={(props) => <MyList {...props} list={this.state.list} />} />
                         <Route path='/MyListing/scheduled' render={(props) => <MyList {...props} list={this.state.list} />} />
                         <Route path='/MyListing/ended' render={(props) => <MyList {...props} list={this.state.list} />} />

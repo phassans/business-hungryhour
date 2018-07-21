@@ -12,7 +12,7 @@ class SignUpContainer extends Component {
 
         <div className="top-header" >
           <div className="heading" >Get started with a free account</div>
-          <div className='login' >Already have an account? <Link to="/Login">Login</Link></div>
+          <div className='login' >Already have an account? <Link to="/Login">Log In</Link></div>
         </div>
 
         <div className='inputMainContainer signUpInputCont' >

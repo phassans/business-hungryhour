@@ -5,10 +5,12 @@
     border: none;
 }
 
-.logo {
-    color: #ffffff !important;
-    font-size: 17px;
-    text-decoration: none;
+.landingPageNavLinks > li > a{
+    padding: 19px 16px;
+}
+
+.navbar-default{
+    height: 58px;
 }
 
 .navbar-toggle {
@@ -48,7 +50,7 @@
     color: #ffffff ;
     text-decoration: none;
     font-size: 17px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .navbar-nav li.extraMargin {
@@ -57,9 +59,10 @@
 
 .landingSignUp{
     padding: 8px !important;
-    margin: 5px;
+    margin: 10px;
     border: 1px solid #ffffff;
     border-radius: 3px;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {

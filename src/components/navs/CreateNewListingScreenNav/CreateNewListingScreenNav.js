@@ -15,7 +15,7 @@ class CreateNewListingNavBar extends React.Component {
         return (
             <nav className="navbar navbar-default">
                 <div className='navbar-brand logo' >
-                    <img src={require('../../../assets/logo.png')} style={{ width: 160, height: 25 }} />
+                    <Link to='/' >  <img src={require('../../../assets/logo.png')} className='logoImage' /> </Link>
                 </div>
                 <div className='collapse navbar-collapse' id='nav-collapse'>
 
@@ -28,18 +28,22 @@ class CreateNewListingNavBar extends React.Component {
                         </li>
                         <li className='newListNavBtnRight' >
                             <div className="dropdown" >
-                                <button type="button" >
+                                <button type="button" onClick={() => this.setState({ dropdown: !this.state.dropdown })} >
                                     <span className="glyphicon glyphicon-user"></span>
+                                    <i className="fas fa-caret-down dropDownIcon"></i>
                                 </button>
-                                <a href="#" onClick={() => this.setState({ dropdown: !this.state.dropdown })} ><i className="fas fa-caret-down"></i></a>
                                 <div className={`dropdown-content ${makeBlock}`}>
                                     <a href="#">Link 1</a>
                                     <a href="#">Link 2</a>
                                     <a href="#">Link 3</a>
                                 </div>
+                                <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a className="dropdown-item" href="#!">Dropdown link</a>
+                                    <a className="dropdown-item" href="#!">Dropdown link</a>
+                                </div>
                             </div>
                         </li>
-                        <li className='newListNavBtnRight listRightBtnMargin' >
+                        <li className='newListNavBtnRight listRightBtnMargin CLBorderButton' >
                             <a className='link' href='#' >Create Listing</a>
                         </li>
                         <li className='newListNavBtnRight' >

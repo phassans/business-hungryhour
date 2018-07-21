@@ -23,10 +23,15 @@
 .dropdown button, .dropdown a {
     background-color: transparent;
     color: #ffffff;
-    padding: 14px 13px;
+    padding: 17px 13px;
     border: 0px;
     outline: none;
     font-size: 17px;
+}
+
+.dropDownIcon {
+    margin-left: 18px;
+    margin-right: 6px;
 }
 
 .dropdown button {
