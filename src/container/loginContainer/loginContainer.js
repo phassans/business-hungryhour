@@ -2,8 +2,54 @@ import React, { Component } from 'react';
 import '../signUpContainer/signUpContainer.css';
 import { Link } from 'react-router-dom';
 import NavBar from '../../components/navs/signUpLoginNav/signUpLoginNav';
+import { BASE_URL } from "../../data/api";
 
 class LoginContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.userInfo = {};
+    this.userInfo.email = React.createRef();
+    this.userInfo.password = React.createRef();
+  }
+
+  signin = () => {
+    const email = this.userInfo.email;
+    const password = this.userInfo.password;
+
+    if (!email.validity.valid) {
+      alert("(" + email.placeholder + ") - " + email.validationMessage);
+      return;
+    }
+
+    if (!password.validity.valid) {
+      alert("(" + password.placeholder + ") - " + password.validationMessage);
+      return;
+    }
+
+
+    fetch(BASE_URL + 'user/verify', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value
+      })
+    })
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+        if (responseJson.code === 400 && responseJson.message) {
+          alert(responseJson.message);
+          return;
+        }
+
+        this.props.history.push('/');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div className='mainContainer' >
@@ -18,11 +64,11 @@ class LoginContainer extends Component {
         <div className='inputMainContainer' >
           <div className='inputContainer centeredInput' >
             <div>Enter your Email</div>
-            <input type='text' placeholder='Email' />
+            <input type='email' placeholder='Email' ref={(input) => this.userInfo.email = input} required />
           </div>
           <div className='inputContainer centeredInput' >
             <div>Enter your Password</div>
-            <input type='password' placeholder='Password' />
+            <input type='password' placeholder='Password' ref={(passwordInput) => this.userInfo.password = passwordInput} required />
           </div>
           <label className="container rememberCheckbox" >
             Remember Me
@@ -35,7 +81,7 @@ class LoginContainer extends Component {
 
         <div className='footer' >
           <div className='btnContainer' >
-            <button className="btn orangeBtn">Log in</button>
+            <button className="btn orangeBtn" onClick={this.signin}>Log in</button>
             <div className='orTxtMainCont' >
               <div className='orLineCont' ><div className='orLine' /></div>
               <div className='orTxt' >Or</div>
@@ -45,13 +91,13 @@ class LoginContainer extends Component {
           </div>
           <div className="btnGroup" >
             <button className="btn1"> <span>
-              <img src={require('../../assets/ficom.png')} style={{width: 25, height: 25}} />
+              <img src={require('../../assets/ficom.png')} style={{ width: 25, height: 25 }} />
               {/* <i class="fab fa-facebook-square"></i> */}
             </span> Facebook</button>
             <button className="btn1" > <span>
-              <img src={require('../../assets/gicon.png')} style={{width: 25, height: 25}} />
+              <img src={require('../../assets/gicon.png')} style={{ width: 25, height: 25 }} />
               {/* <i class="fab fa-google"></i> */}
-              </span> Google</button>
+            </span> Google</button>
           </div>
 
         </div>

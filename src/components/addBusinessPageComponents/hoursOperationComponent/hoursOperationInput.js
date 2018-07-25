@@ -19,9 +19,11 @@ export class HoursOperationInput extends Component {
     _onSelect(option, v) {
         console.log(v, 'You selected ', option.label)
         if (v === 'first') {
-            this.setState({ selected: option })
+            this.props.hour.open_time_session_one = option.label;
+            this.setState({ selected: option });
         } else {
-            this.setState({ selected1: option })
+            this.setState({ selected1: option });
+            this.props.hour.close_time_session_one = option.label;
         }
     }
 

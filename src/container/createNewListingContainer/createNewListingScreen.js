@@ -7,6 +7,7 @@ import moment from 'moment';
 import Section1 from '../../components/createNewListComponent/section1';
 import Section2 from '../../components/createNewListComponent/section2';
 import Section3 from '../../components/createNewListComponent/section3';
+import { BASE_URL } from "../../data/api";
 
 class CreateNewListingContainer extends Component {
     constructor(props) {

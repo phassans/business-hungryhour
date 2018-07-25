@@ -16,7 +16,7 @@ class BusinessContent1 extends Component {
                         {
                             dayName.map((v, i) => {
                                 return (
-                                    <HoursOperationInput handleCheckBox={() => this.props.handleCheckBox(i, 'hours')} checked={daysCheckBox[i]} key={i} dayName={v} />
+                                    <HoursOperationInput handleCheckBox={() => this.props.handleCheckBox(i, 'hours')} checked={daysCheckBox[i]} key={i} dayName={v} hour={this.props.hours[i]}/>
                                 )
                             })
                         }

@@ -6,6 +6,7 @@ import AnimateHeight from 'react-animate-height';
 import BusinessContent from '../../components/addBusinessPageComponents/businessContent';
 import BusinessContent1 from '../../components/addBusinessPageComponents/businessContent1';
 import { CuisineCheckBox } from '../../components/addBusinessPageComponents/cuisineCheckbox/cuisineCheckbox';
+import { BASE_URL } from "../../data/api";
 
 class AddBusiness extends Component {
     constructor(props) {
@@ -23,10 +24,53 @@ class AddBusiness extends Component {
             cuisineType2: ['Halal', 'Hawaiian', 'Ice Cream and Frozen Yogurt', 'Indian', 'Italian', 'Japanese', 'Juice and Smoothies', 'Korean', 'Mediterranean', 'Mexican'],
             cuisineType3: ['Pizza', 'Salads', 'Sandwiches', 'Seafood', 'Sushi', 'Thai', 'Vegan Friendly', 'Vegetarian Friendly', 'Vietnamese', 'Wings'],
         }
+
         this.handleNext = this.handleNext.bind(this);
+
+        this.businessInfo = {
+            hours: [
+                {
+                    "day": "monday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                },
+                {
+                    "day": "tuesday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                },
+                {
+                    "day": "wednesday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                },
+                {
+                    "day": "thursday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                },
+                {
+                    "day": "friday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                },
+                {
+                    "day": "saturday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                },
+                {
+                    "day": "sunday",
+                    "open_time_session_one": null,
+                    "close_time_session_one": null
+                }
+            ],
+            cuisine: []
+        };
     }
 
     handleNext(v) {
+        console.log(this.businessInfo);
         if (v === 'first') {
             this.setState({
                 firstSelect: { height: 0, status: false, edit: true },
@@ -44,15 +88,46 @@ class AddBusiness extends Component {
             })
         }
         else if (v === 'third') {
-            // console.log('hello')
-            this.setState({
-                firstSelect: { ...this.state.secondSelect, edit: true },
-                secondSelect: { ...this.state.secondSelect, edit: true },
-                thirdSelect: { height: 0, status: false, edit: true },
-                fourthSelect: { status: true, height: 'auto', edit: true },
-                lastHeight: 'auto'
-            })
+            // Submit
+            this.submitBusiness();
         }
+    }
+
+    submitBusiness = () => {
+        var clonedBusinessInfo = Object.assign({}, this.businessInfo);
+        var validHours = [];
+        for (var i = 0; i < clonedBusinessInfo.hours.length; i++) {
+            if (clonedBusinessInfo.hours[i].open_time_session_one && clonedBusinessInfo.hours[i].close_time_session_one) {
+                validHours.push(clonedBusinessInfo.hours[i]);
+            }
+        }
+
+        clonedBusinessInfo.hours = validHours;
+        console.log(clonedBusinessInfo);
+
+        fetch(BASE_URL + 'business/add', {
+            method: 'POST',
+            body: JSON.stringify(clonedBusinessInfo)
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log(responseJson);
+                if (responseJson.code === 400 && responseJson.message) {
+                    alert(responseJson.message);
+                    return;
+                }
+
+                this.setState({
+                    firstSelect: { ...this.state.secondSelect, edit: true },
+                    secondSelect: { ...this.state.secondSelect, edit: true },
+                    thirdSelect: { height: 0, status: false, edit: true },
+                    fourthSelect: { status: true, height: 'auto', edit: true },
+                    lastHeight: 'auto'
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     handleCheckBox = (i, v) => {
@@ -86,7 +161,7 @@ class AddBusiness extends Component {
                                 <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 'auto', edit: false }, secondSelect: { ...secondSelect, height: 0, edit: true }, thirdSelect: { ...thirdSelect, height: 0, edit: false }, lastHeight: 0 })} >edit</span> : null
                         }
                     </div>
-                    <BusinessContent initialState={firstSelect} setState={(v) => this.handleNext(v)} />
+                    <BusinessContent initialState={firstSelect} setState={(v) => this.handleNext(v)} businessInfo={this.businessInfo} />
                     <hr />
                     <div className={`businesslistHeading ${secondStatus}`} >2. Business Hours:
                     {
@@ -95,7 +170,7 @@ class AddBusiness extends Component {
                         }
                     </div>
 
-                    <BusinessContent1 handleCheckBox={this.handleCheckBox} initialState={this.state} setState={(v) => this.handleNext(v)} />
+                    <BusinessContent1 handleCheckBox={this.handleCheckBox} initialState={this.state} setState={(v) => this.handleNext(v)} hours={this.businessInfo.hours} />
                     <hr />
                     <div className={`businesslistHeading ${thirdStatus}`} >3. Cuisine type(s):
                     {
@@ -111,7 +186,7 @@ class AddBusiness extends Component {
                                     {
                                         cuisineType1.map((v, i) => {
                                             return (
-                                                <CuisineCheckBox key={i} name={v} />
+                                                <CuisineCheckBox key={i} name={v} cuisine={this.businessInfo.cuisine} />
                                             )
                                         })
                                     }
@@ -120,7 +195,7 @@ class AddBusiness extends Component {
                                     {
                                         cuisineType2.map((v, i) => {
                                             return (
-                                                <CuisineCheckBox key={i} name={v} />
+                                                <CuisineCheckBox key={i} name={v} cuisine={this.businessInfo.cuisine} />
                                             )
                                         })
                                     }
@@ -129,7 +204,7 @@ class AddBusiness extends Component {
                                     {
                                         cuisineType3.map((v, i) => {
                                             return (
-                                                <CuisineCheckBox key={i} name={v} />
+                                                <CuisineCheckBox key={i} name={v} cuisine={this.businessInfo.cuisine} />
                                             )
                                         })
                                     }
