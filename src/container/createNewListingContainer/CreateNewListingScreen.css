@@ -155,3 +155,11 @@
 	outline: 1px dotted #000;
 	outline: -webkit-focus-ring-color auto 5px;
 }
+
+.welcomeHeading{
+    font-size: 20px;
+    margin: 15px 0px;
+    font-weight: 600 ;
+    display: inline-block;
+    padding-right: 10px;
+}
