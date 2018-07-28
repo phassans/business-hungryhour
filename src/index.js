@@ -22,10 +22,11 @@ class Routes extends React.Component {
                     <Route path="/Signup" component={SignUpContainer} />
                     <Route path="/AddBusiness" component={AddBusiness} />
                     <Route path="/Login" component={LoginContainer} />
-                    <Route path="/CreateList" component={CreateNewListingContainer} />
+                    <Route path="/CreateList/:businessId" component={CreateNewListingContainer} />
+                    <Route path="/EditList/:listingId/:businessId" component={CreateNewListingContainer} />
                     <Route path="/PlanAndPricing" component={PlanAndPricingScreen} />
                     <Route path="/MyAccount" component={MyAccountPage} />
-                    <Route path="/MyListing" component={MyListingHomePage} />
+                    <Route path="/MyListing/:businessId" component={MyListingHomePage} />
                 </div>
             </Router>
         )

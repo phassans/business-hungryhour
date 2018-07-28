@@ -11,10 +11,11 @@ import { options } from '../../data/time';
 
 
 class Section3 extends Component {
+
     render() {
         const { status, height, edit } = this.props.state.sections.third;
         const { question1, question2, question3, startDate, startTime, endTime, endDate, endDate1 } = this.props.state;
-        const { handleEdit, handleNextBtnClick, handleDateChange, _handleAnswerSelection } = this.props;
+        const { handleEdit, handleNextBtnClick, handleDateChange, _handleAnswerSelection, _onSelect } = this.props;
         return (
             <div>
                 <div className={`addListFirstSectionHeading ${status ? 'addListFirstSectionHeadingActive' : ''}`} >3. {question1.select1 ? 'Meal' : 'Happy Hour'} Details</div>
@@ -30,13 +31,13 @@ class Section3 extends Component {
                                 placeholderText='Start Date'
                                 selected={startDate}
                                 onChange={(v) => handleDateChange(v, 'startDate')}
-                                />
+                            />
                             <div className='addListScreenTimeMainContainer' >
                                 <div className='addListScreenTimeContainer' >
-                                    <Dropdown options={options} onChange={(v) => this._onSelect(v, 'first')} value={startTime} />
+                                    <Dropdown options={options} onChange={(v) => _onSelect(v, 'first')} value={startTime} />
                                 </div>
                                 <div className='addListScreenTimeContainer1' >
-                                    <Dropdown options={options} onChange={(v) => this._onSelect(v, 'second')} value={endTime} />
+                                    <Dropdown options={options} onChange={(v) => _onSelect(v, 'second')} value={endTime} />
                                 </div>
                             </div>
                             <div className='addListFirstQuestionContainer' >
@@ -47,14 +48,14 @@ class Section3 extends Component {
                                 </div>
                             </div>
                             <AnimateHeight duration={500} height={question2.select1 ? 'auto' : 0} >
-                            <div style={{ marginTop: 20, marginBottom: 20 }} >
-                                <DatePicker
-                                    dateFormat='DD/MM/YYYY'
-                                    placeholderText='End Date'
-                                    selected={endDate}
-                                    onChange={(v) => handleDateChange(v, 'endDate')}
+                                <div style={{ marginTop: 20, marginBottom: 20 }} >
+                                    <DatePicker
+                                        dateFormat='DD/MM/YYYY'
+                                        placeholderText='End Date'
+                                        selected={endDate}
+                                        onChange={(v) => handleDateChange(v, 'endDate')}
                                     />
-                            </div>
+                                </div>
                             </AnimateHeight>
                             <div className='addListFirstQuestionContainer' >
                                 <div className='addListFirstQuestion' >Recurring?</div>

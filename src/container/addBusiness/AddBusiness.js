@@ -23,11 +23,16 @@ class AddBusiness extends Component {
             cuisineType1: ['American', 'Asian', 'Asian Fusion', 'BBQ', 'Bubble Tea', 'Cafe', 'Chinese', 'Desserts', 'Fast Food', 'Greek'],
             cuisineType2: ['Halal', 'Hawaiian', 'Ice Cream and Frozen Yogurt', 'Indian', 'Italian', 'Japanese', 'Juice and Smoothies', 'Korean', 'Mediterranean', 'Mexican'],
             cuisineType3: ['Pizza', 'Salads', 'Sandwiches', 'Seafood', 'Sushi', 'Thai', 'Vegan Friendly', 'Vegetarian Friendly', 'Vietnamese', 'Wings'],
+            businessHoursErrors: "",
+            cuisineTypeErrors: "",
+            submitErrors: ""
         }
 
         this.handleNext = this.handleNext.bind(this);
 
         this.businessInfo = {
+            addressId: null,
+            businessId: null,
             hours: [
                 {
                     "day": "monday",
@@ -69,9 +74,37 @@ class AddBusiness extends Component {
         };
     }
 
+    getValidBusinessHours = (businessHours) => {
+        var validHours = [];
+        for (var i = 0; i < businessHours.length; i++) {
+            if (businessHours[i].open_time_session_one && businessHours[i].close_time_session_one) {
+                validHours.push(businessHours[i]);
+            }
+        }
+
+        return validHours;
+    }
+
+    validateBusinessHours = () => {
+        this.setState({ businessHoursErrors: "" });
+
+        var vHours = this.getValidBusinessHours(this.businessInfo.hours);
+
+        return vHours.length === 0;
+    }
+
+    validateCuisineType = () => {
+        this.setState({ cuisineTypeErrors: "" });
+        return this.businessInfo.cuisine.length === 0;
+    }
+
     handleNext(v) {
         console.log(this.businessInfo);
         if (v === 'first') {
+            if (!this.businessInfo.name) {
+                return;
+            }
+
             this.setState({
                 firstSelect: { height: 0, status: false, edit: true },
                 secondSelect: { height: 'auto', status: true, edit: false },
@@ -80,6 +113,13 @@ class AddBusiness extends Component {
             })
         }
         else if (v === 'second') {
+            const isError = this.validateBusinessHours();
+
+            if (isError) {
+                this.setState({ businessHoursErrors: "Please select business hours day" });
+                return;
+            }
+
             this.setState({
                 firstSelect: { height: 0, status: false, edit: true, },
                 secondSelect: { height: 0, status: false, edit: true },
@@ -88,12 +128,29 @@ class AddBusiness extends Component {
             })
         }
         else if (v === 'third') {
+            // Validate
+            const isError = this.validateCuisineType();
+            if (isError) {
+                this.setState({ cuisineTypeErrors: "Please select business cuisne type" });
+                return;
+            }
+
             // Submit
-            this.submitBusiness();
+            var action = 'business/add';
+
+            if (this.businessInfo.businessId) {
+                action = 'business/edit';
+            }
+
+            this.submitBusiness(action);
         }
     }
 
-    submitBusiness = () => {
+    submitBusiness = (action) => {
+        this.setState({
+            submitErrors: ""
+        });
+
         var clonedBusinessInfo = Object.assign({}, this.businessInfo);
         var validHours = [];
         for (var i = 0; i < clonedBusinessInfo.hours.length; i++) {
@@ -105,15 +162,15 @@ class AddBusiness extends Component {
         clonedBusinessInfo.hours = validHours;
         console.log(clonedBusinessInfo);
 
-        fetch(BASE_URL + 'business/add', {
+        fetch(BASE_URL + action, {
             method: 'POST',
             body: JSON.stringify(clonedBusinessInfo)
         })
             .then((response) => response.json())
             .then((responseJson) => {
                 console.log(responseJson);
-                if (responseJson.code === 400 && responseJson.message) {
-                    alert(responseJson.message);
+                if (responseJson.code === 400 || responseJson.code === 500) {
+                    this.setState({ submitErrors: responseJson.message });
                     return;
                 }
 
@@ -124,6 +181,9 @@ class AddBusiness extends Component {
                     fourthSelect: { status: true, height: 'auto', edit: true },
                     lastHeight: 'auto'
                 });
+
+                this.businessInfo.addressId = responseJson.addressId;
+                this.businessInfo.businessId = responseJson.businessId;
             })
             .catch((error) => {
                 console.log(error);
@@ -152,6 +212,11 @@ class AddBusiness extends Component {
                 <div className="top-header" >
                     <div className="heading" style={{ marginTop: 45, fontSize: 27 }} >You’re almost there!</div>
                     <div className='login' >Complete your business details</div>
+                    <div className='inputMainContainer signUpInputCont'>
+                        <div className='inputContainer centeredInput' style={{ color: 'rgb(244, 67, 54)' }}>
+                            {this.state.submitErrors}
+                        </div>
+                    </div>
                 </div>
 
                 <div className='addBusinessSection'>
@@ -161,7 +226,7 @@ class AddBusiness extends Component {
                                 <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 'auto', edit: false }, secondSelect: { ...secondSelect, height: 0, edit: true }, thirdSelect: { ...thirdSelect, height: 0, edit: false }, lastHeight: 0 })} >edit</span> : null
                         }
                     </div>
-                    <BusinessContent initialState={firstSelect} setState={(v) => this.handleNext(v)} businessInfo={this.businessInfo} />
+                    <BusinessContent initialState={firstSelect} setState={(v) => this.handleNext(v)} businessInfo={this.businessInfo} errors={this.state.errors} />
                     <hr />
                     <div className={`businesslistHeading ${secondStatus}`} >2. Business Hours:
                     {
@@ -169,8 +234,12 @@ class AddBusiness extends Component {
                                 <span className='editTxt' onClick={() => this.setState({ firstSelect: { ...firstSelect, height: 0, edit: true }, secondSelect: { ...secondSelect, height: 'auto', edit: false }, thirdSelect: { ...thirdSelect, edit: false, height: 0 }, lastHeight: 0 })} >edit</span> : null
                         }
                     </div>
-
                     <BusinessContent1 handleCheckBox={this.handleCheckBox} initialState={this.state} setState={(v) => this.handleNext(v)} hours={this.businessInfo.hours} />
+                    <div className='inputMainContainer signUpInputCont'>
+                        <div className='inputContainer centeredInput' style={{ color: 'rgb(244, 67, 54)' }}>
+                            {this.state.businessHoursErrors}
+                        </div>
+                    </div>
                     <hr />
                     <div className={`businesslistHeading ${thirdStatus}`} >3. Cuisine type(s):
                     {
@@ -215,11 +284,16 @@ class AddBusiness extends Component {
                             </div>
                         </div>
                     </AnimateHeight>
+                    <div className='inputMainContainer signUpInputCont'>
+                        <div className='inputContainer centeredInput' style={{ color: 'rgb(244, 67, 54)' }}>
+                            {this.state.cuisineTypeErrors}
+                        </div>
+                    </div>
                     <hr />
                     <AnimateHeight duration={500} height={this.state.lastHeight} >
                         <p className='lastbusinessText' >You have successfully set up your business.</p>
                         <div className='btnContainer' >
-                            <Link to='/CreateList' className="btn orangeBtn" >Create your first listing</Link>
+                            <Link to={`/CreateList/${this.businessInfo.businessId}`}  className="btn orangeBtn" >Create your first listing</Link>
                         </div>
                     </AnimateHeight>
                 </div>
