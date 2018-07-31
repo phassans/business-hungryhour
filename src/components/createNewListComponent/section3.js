@@ -45,6 +45,52 @@ class Section3 extends Component {
     }
 
     componentDidMount() {
+        if (this.props.editListing && this.props.editListing.recurringDays) {
+            let cbDefaults = {
+                monday: false,
+                tuesday: false,
+                wednesday: false,
+                thursday: false,
+                friday: false,
+                saturday: false,
+                sunday: false
+            };
+
+            const recurringDays = this.props.editListing.recurringDays;
+
+            if (recurringDays.includes("monday")) {
+                cbDefaults.monday = true;
+            }
+
+            if (recurringDays.includes("tuesday")) {
+                cbDefaults.tuesday = true;
+            }
+
+            if (recurringDays.includes("wednesday")) {
+                cbDefaults.wednesday = true;
+            }
+
+            if (recurringDays.includes("thursday")) {
+                cbDefaults.thursday = true;
+            }
+
+            if (recurringDays.includes("friday")) {
+                cbDefaults.friday = true;
+            }
+
+            if (recurringDays.includes("saturday")) {
+                cbDefaults.saturday = true;
+            }
+
+            if (recurringDays.includes("sunday")) {
+                cbDefaults.sunday = true;
+            }
+            
+            this.setState({
+                ...this.state,
+                ...cbDefaults
+            });
+        }
     }
 
     render() {

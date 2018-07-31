@@ -72,7 +72,7 @@ class CreateNewListingContainer extends Component {
                     startTime: moment(responseJson.startTime, 'YYYY-MM-DDThh:mm A').format('hh:mm A'),
                     endDate: moment(responseJson.endDate),
                     endTime: moment(responseJson.endTime, 'YYYY-MM-DDThh:mm A').format('hh:mm A')
-                })
+                });
 
                 if (responseJson.listingType === 'happyhour') {
                     this._handleAnswerSelection('1.2');
@@ -96,6 +96,12 @@ class CreateNewListingContainer extends Component {
 
                 if (responseJson.recurringDays) {
                     this.listingInfo.recurringDays = responseJson.recurringDays;
+                }
+
+                if (responseJson.recurringEndDate) {
+                    this.setState({ 
+                        endDate1: moment(responseJson.recurringEndDate)
+                    });
                 }
             })
             .catch((error) => {
