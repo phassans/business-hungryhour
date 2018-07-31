@@ -45,7 +45,8 @@ class CreateNewListingContainer extends Component {
 
         this.listingInfo = {
             dietaryRestriction: [],
-            listingId: null
+            listingId: null,
+            recurringDays: []
         };
 
         if (this.listingId) {
@@ -65,10 +66,36 @@ class CreateNewListingContainer extends Component {
                     return;
                 }
 
-                this.setState({ editListing: responseJson.listing })
+                this.setState({ 
+                    editListing: responseJson, 
+                    startDate: moment(responseJson.startDate),
+                    startTime: moment(responseJson.startTime, 'YYYY-MM-DDThh:mm A').format('hh:mm A'),
+                    endDate: moment(responseJson.endDate),
+                    endTime: moment(responseJson.endTime, 'YYYY-MM-DDThh:mm A').format('hh:mm A')
+                })
 
-                if (responseJson.listing.listingType === 'happyhour') {
+                if (responseJson.listingType === 'happyhour') {
                     this._handleAnswerSelection('1.2');
+                }
+
+                if (responseJson.multipleDays) {
+                    this._handleAnswerSelection('2.1');
+                } else {
+                    this._handleAnswerSelection('2.2');
+                }
+
+                if (responseJson.recurring) {
+                    this._handleAnswerSelection('3.1');
+                } else {
+                    this._handleAnswerSelection('3.2');
+                }
+
+                if (responseJson.dietaryRestriction) {
+                    this.listingInfo.dietaryRestriction = responseJson.dietaryRestriction;
+                }
+
+                if (responseJson.recurringDays) {
+                    this.listingInfo.recurringDays = responseJson.recurringDays;
                 }
             })
             .catch((error) => {
@@ -143,15 +170,15 @@ class CreateNewListingContainer extends Component {
                 this.listingInfo.endTime = "23:59:59";
             }
 
-            if (this.state.endDate && this.state.endDate.length > 0) {
+            if (this.state.endDate) {
                 this.listingInfo.endDate = moment(this.state.endDate).format('MM/DD/YYYY');
             }
             else {
                 this.listingInfo.endDate = moment().format('MM/DD/YYYY');
             }
 
-            if (this.state.endDate1 && this.state.endDate1.length > 0) {
-                this.listingInfo.RecurringEndDate = moment(this.state.endDate1).format('MM/DD/YYYY');
+            if (this.state.endDate1) {
+                this.listingInfo.recurringEndDate = moment(this.state.endDate1).format('MM/DD/YYYY');
             }
 
             this.listingInfo.recurring = this.state.question3.select1;
@@ -234,7 +261,7 @@ class CreateNewListingContainer extends Component {
 
                 <div className='addListContent' >
                     <div className='addListHeaderContainer' >
-                        <div className='addListHeader' >New Listing</div>
+                        <div className='addListHeader' >{ !this.listingInfo.listingId ? 'NEW LISTING' : 'EDIT LISTING' }</div>
                     </div>
                     <div className='addListFirstQuestionContainer' >
                         <div className='addListFirstQuestion' >What type of deal do you want to list? </div>
@@ -263,6 +290,7 @@ class CreateNewListingContainer extends Component {
                                             handleEdit={() => this.handleEdit('third')}
                                             handleNextBtnClick={() => this.handleNextBtnClick('third')}
                                             _onSelect={(v, o) => this._onSelect(v, o)} 
+                                            recurringDays={this.listingInfo.recurringDays}
                                             editListing={this.state.editListing}/>
                                         <div className='inputMainContainer signUpInputCont'>
                                             <div className='inputContainer centeredInput' style={{ color: 'rgb(244, 67, 54)' }}>

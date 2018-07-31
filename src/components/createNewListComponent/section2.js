@@ -37,12 +37,20 @@ class Section2 extends Component {
 
             this.setState({
                 ...this.state,
-                ...this.props.cbDefaults
+                ...cbDefaults
             });
         }
     }
 
     handleCheck = (event, val) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+        
         var index = this.props.dietaryRestriction.indexOf(val);
         if (event.target.checked) {
             if (index === -1) {
@@ -69,21 +77,21 @@ class Section2 extends Component {
                         <div style={{ marginTop: 20, marginBottom: 20 }} >
                             <div className='addListCheckBoxContainer'>
                                 <label className="container">
-                                    <input type="checkbox" defaultChecked={this.state.vegetarianChecked} onChange={(event) => this.handleCheck(event, "vegetarian")} />
+                                    <input name="vegetarianChecked" type="checkbox" checked={this.state.vegetarianChecked} onChange={(event) => this.handleCheck(event, "vegetarian")} />
                                     <span className="checkmark"></span>
                                     Vegetarian
                                         </label>
                             </div>
                             <div className='addListCheckBoxContainer'>
                                 <label className="container">
-                                    <input type="checkbox" defaultChecked={this.state.veganChecked} onChange={(event) => this.handleCheck(event, "vegan")} />
+                                    <input type="checkbox" name="veganChecked" checked={this.state.veganChecked} onChange={(event) => this.handleCheck(event, "vegan")} />
                                     <span className="checkmark"></span>
                                     Vegan
                                         </label>
                             </div>
                             <div className='addListCheckBoxContainer'>
                                 <label className="container">
-                                    <input type="checkbox" defaultChecked={this.state.glutenChecked} onChange={(event) => this.handleCheck(event, "gluten free")} />
+                                    <input type="checkbox" name="glutenChecked" checked={this.state.glutenChecked} onChange={(event) => this.handleCheck(event, "gluten free")} />
                                     <span className="checkmark"></span>
                                     Gluten free
                                         </label>

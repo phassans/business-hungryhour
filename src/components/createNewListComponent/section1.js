@@ -20,9 +20,7 @@ class Section1 extends Component {
             description: "",
             descriptionError: "",
             discount: "",
-            discountError: "",
-            price: "",
-            priceError: ""
+            discountError: ""
         }
     }
 
@@ -54,7 +52,6 @@ class Section1 extends Component {
             oldPriceError: "",
             descriptionError: "",
             discountError: "",
-            priceError: "",
         };
 
         if (this.state.title.length == 0) {
@@ -62,10 +59,10 @@ class Section1 extends Component {
             errors.titleError = "Title is required";
         }
 
-        if (this.state.price.length == 0)
+        if (this.state.newPrice.length == 0)
         {
             isError = true;
-            errors.priceError = "Price is required";
+            errors.newPriceError = "Price is required";
         }
         
         if (this.state.description.length == 0) {
@@ -81,7 +78,7 @@ class Section1 extends Component {
         if (!isError) {
             this.props.listingInfo.title = this.state.title;
 
-            this.props.listingInfo.newPrice = parseFloat(this.state.price);
+            this.props.listingInfo.newPrice = parseFloat(this.state.newPrice);
 
             if (this.state.discount) {
                 this.props.listingInfo.discount = parseFloat(this.state.discount);
@@ -148,10 +145,10 @@ class Section1 extends Component {
                                                 </div>
                                                 <div className='inputContainer inputContainerpositionRelative ' >
                                                     <TextField
-                                                        name="price"
+                                                        name="newPrice"
                                                         hintText="$ New price"
-                                                        value={this.state.price}
-                                                        onChange={e => this.updateInput(e, 'price')}
+                                                        value={this.state.newPrice}
+                                                        onChange={e => this.updateInput(e, 'newPrice')}
                                                         errorText={this.state.newPriceError}
                                                         type="text"
                                                     />
@@ -201,11 +198,11 @@ class Section1 extends Component {
                                                     </div>
                                                     <div className='addListInputRightCont priceHH' >
                                                         <TextField
-                                                            name="price"
+                                                            name="newPrice"
                                                             hintText="$ Price"
-                                                            value={this.state.price}
-                                                            onChange={e => this.updateInput(e, 'price')}
-                                                            errorText={this.state.priceError}
+                                                            value={this.state.newPrice}
+                                                            onChange={e => this.updateInput(e, 'newPrice')}
+                                                            errorText={this.state.newPriceError}
                                                             type="text"
                                                         />
                                                         {/* <input type='text' placeholder='Price' onInput={(v) => this.handleChangeInput(v)} />

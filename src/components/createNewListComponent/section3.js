@@ -11,6 +11,41 @@ import { options } from '../../data/time';
 
 
 class Section3 extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            monday: false,
+            tuesday: false,
+            wednesday: false,
+            thursday: false,
+            friday: false,
+            saturday: false,
+            sunday: false
+        }
+    }
+
+    handleCheck = (event, val) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+
+        var index = this.props.recurringDays.indexOf(val);
+        if (event.target.checked) {
+            if (index === -1) {
+                this.props.recurringDays.push(val);
+            }
+        } else {
+            this.props.recurringDays.splice(index, 1);
+        }
+    }
+
+    componentDidMount() {
+    }
 
     render() {
         const { status, height, edit } = this.props.state.sections.third;
@@ -73,7 +108,7 @@ class Section3 extends Component {
                                                 return (
                                                     <div key={i} className='addListCheckBoxContainer'>
                                                         <label className="container">
-                                                            <input type="checkbox" />
+                                                            <input type="checkbox" name={v.toLowerCase()} checked={this.state[v.toLowerCase()]} onChange={(event) => this.handleCheck(event, v.toLowerCase())} />
                                                             <span className="checkmark"></span>
                                                             {v}
                                                         </label>
